@@ -5,283 +5,253 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Las Vegas · June 2–7, 2026 · Mark &amp; Harriet</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --sand: #F5F0E8;
-    --sand-dark: #EDE5D5;
-    --ink: #1A1612;
-    --ink-soft: #5C5248;
-    --ink-muted: #9C9088;
-    --gold: #C8974A;
-    --gold-light: #F0E4CC;
-    --teal: #2D7A6B;
-    --teal-light: #E0F0EC;
-    --coral: #C85840;
-    --coral-light: #F5E8E4;
-    --amber: #D4820A;
-    --amber-light: #FFF0D8;
-    --purple: #6B4E8A;
-    --purple-light: #EEE8F5;
-    --slate: #4A5568;
-    --slate-light: #EEF2F7;
+    --bg: #08070F;
+    --card: rgba(255,255,255,0.04);
+    --card-border: rgba(255,255,255,0.09);
+    --gold: #FFD04A;
+    --pink: #FF2D8F;
+    --teal: #00E5CC;
+    --purple: #C46AFF;
+    --amber: #FF8C00;
+    --blue: #4DA6FF;
+    --text: #F0EEF8;
+    --text-soft: rgba(240,238,248,0.55);
+    --text-muted: rgba(240,238,248,0.3);
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
     font-family: 'DM Sans', sans-serif;
-    background: var(--sand);
-    color: var(--ink);
+    background: var(--bg);
+    color: var(--text);
     min-height: 100vh;
+    background-image:
+      radial-gradient(circle at 15% 15%, rgba(196,106,255,0.06) 0%, transparent 40%),
+      radial-gradient(circle at 85% 80%, rgba(0,229,204,0.05) 0%, transparent 40%),
+      radial-gradient(circle at 50% 50%, rgba(255,208,74,0.03) 0%, transparent 60%);
   }
 
-  /* ── HEADER ── */
+  /* HERO */
   .hero {
-    background: var(--ink);
-    color: white;
-    padding: 3rem 2rem 2.5rem;
+    background: linear-gradient(160deg, #0D0520 0%, #060410 60%, #000C18 100%);
+    padding: 3.5rem 2rem 3rem;
     position: relative;
     overflow: hidden;
+    border-bottom: 1px solid rgba(255,208,74,0.15);
   }
   .hero::before {
     content: '';
-    position: absolute;
-    inset: 0;
-    background: 
-      radial-gradient(ellipse at 80% 50%, rgba(200,151,74,.15) 0%, transparent 60%),
-      radial-gradient(ellipse at 20% 80%, rgba(45,122,107,.1) 0%, transparent 50%);
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 60% 30%, rgba(255,45,143,0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at 20% 80%, rgba(0,229,204,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 90% 70%, rgba(196,106,255,0.08) 0%, transparent 50%);
   }
-  .hero-inner { position: relative; max-width: 680px; margin: 0 auto; }
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--pink), var(--gold), var(--teal), transparent);
+    opacity: 0.8;
+  }
+  .hero-inner { position: relative; max-width: 1100px; margin: 0 auto; }
   .hero-tag {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1rem;
-    border: 1px solid rgba(200,151,74,.4);
-    padding: 4px 12px;
-    border-radius: 20px;
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--gold); border: 1px solid rgba(255,208,74,0.35);
+    padding: 5px 14px; border-radius: 20px; margin-bottom: 1.25rem;
+    background: rgba(255,208,74,0.06); box-shadow: 0 0 12px rgba(255,208,74,0.1);
   }
   .hero h1 {
     font-family: 'DM Serif Display', serif;
-    font-size: clamp(2.2rem, 6vw, 3.2rem);
-    line-height: 1.1;
-    color: white;
-    margin-bottom: .5rem;
+    font-size: clamp(2.6rem, 7vw, 4.2rem); line-height: 1.05; color: white;
+    margin-bottom: .6rem;
+    text-shadow: 0 0 40px rgba(255,45,143,0.3), 0 0 80px rgba(255,45,143,0.1);
   }
-  .hero h1 em { color: var(--gold); font-style: italic; }
-  .hero-sub {
-    font-size: 15px;
-    color: rgba(255,255,255,.55);
-    font-weight: 300;
-    margin-top: .75rem;
+  .hero h1 em {
+    color: var(--gold); font-style: italic;
+    text-shadow: 0 0 30px rgba(255,208,74,0.5), 0 0 60px rgba(255,208,74,0.2);
+  }
+  .hero-sub { font-size: 15px; color: var(--text-soft); font-weight: 300; margin-top: .85rem; }
+  .hero-deco {
+    position: absolute; right: 2rem; top: 50%; transform: translateY(-50%);
+    font-size: 5rem; opacity: 0.05; user-select: none; color: var(--gold); filter: blur(1px);
   }
 
-  /* ── FLIGHT STRIP ── */
+  /* FLIGHT STRIP */
   .flight-strip {
-    background: var(--ink);
-    border-top: 1px solid rgba(255,255,255,.08);
-    padding: 0 2rem 1.5rem;
+    background: linear-gradient(135deg, #0A0515 0%, #050A10 100%);
+    border-bottom: 1px solid rgba(77,166,255,0.15);
+    padding: .75rem 2rem 1.25rem;
   }
-  .flight-strip-inner { max-width: 680px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 12px; }
+  .flight-strip-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 12px; }
   .flight-pill {
-    display: flex; align-items: center; gap: 10px;
-    background: rgba(255,255,255,.06);
-    border: 1px solid rgba(255,255,255,.1);
-    border-radius: 10px;
-    padding: 10px 14px;
-    flex: 1; min-width: 200px;
+    display: flex; align-items: flex-start; gap: 12px;
+    background: rgba(77,166,255,0.06); border: 1px solid rgba(77,166,255,0.18);
+    border-radius: 12px; padding: 12px 16px; flex: 1; min-width: 240px;
   }
-  .fp-icon { font-size: 18px; }
-  .fp-label { font-size: 11px; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 2px; }
-  .fp-value { font-size: 13px; color: white; font-weight: 400; line-height: 1.4; }
-  .fp-ref { font-size: 11px; color: var(--gold); margin-top: 2px; }
+  .fp-icon { font-size: 20px; padding-top: 2px; }
+  .fp-label { font-size: 10px; color: var(--blue); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 3px; font-weight: 500; }
+  .fp-value { font-size: 13px; color: var(--text); line-height: 1.5; }
+  .fp-ref { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
 
-  /* ── HOTEL CARD ── */
+  /* HOTEL BAND */
   .hotel-band {
-    background: var(--gold-light);
-    border-bottom: 1px solid rgba(200,151,74,.2);
-    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #0E0900 0%, #0A0600 100%);
+    border-bottom: 1px solid rgba(255,208,74,0.18); padding: 1rem 2rem;
   }
-  .hotel-band-inner { max-width: 680px; margin: 0 auto; }
+  .hotel-band-inner { max-width: 1100px; margin: 0 auto; }
+  .fhr-label { font-size: 10px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,208,74,0.5); margin-bottom: .5rem; }
   .hotel-name {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.15rem;
-    color: var(--ink);
-    margin-bottom: .4rem;
+    font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--gold);
+    text-shadow: 0 0 20px rgba(255,208,74,0.3); margin-bottom: .4rem;
   }
+  .hotel-conf { font-size: 12px; color: var(--text-muted); margin-bottom: .6rem; }
   .fhr-pills { display: flex; flex-wrap: wrap; gap: 6px; }
   .fhr-pill {
-    font-size: 11px;
-    background: white;
-    border: 1px solid rgba(200,151,74,.35);
-    color: #8A6020;
-    padding: 3px 10px;
-    border-radius: 20px;
-    font-weight: 500;
-  }
-  .fhr-label {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: .5rem;
+    font-size: 11px; background: rgba(255,208,74,0.08); border: 1px solid rgba(255,208,74,0.25);
+    color: var(--gold); padding: 3px 11px; border-radius: 20px; font-weight: 500;
   }
 
-  /* ── TRANSPORT NOTE ── */
+  /* TRANSPORT BAND */
   .transport-band {
-    background: var(--teal-light);
-    border-bottom: 1px solid rgba(45,122,107,.15);
-    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #030F0D 0%, #020A08 100%);
+    border-bottom: 1px solid rgba(0,229,204,0.12); padding: 1rem 2rem;
   }
-  .transport-band-inner { max-width: 680px; margin: 0 auto; }
+  .transport-band-inner { max-width: 1100px; margin: 0 auto; }
   .transport-title {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: .5rem;
+    font-size: 10px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: .6rem; text-shadow: 0 0 10px rgba(0,229,204,0.4);
   }
   .transport-row {
     display: flex; align-items: flex-start; gap: 10px;
-    margin-bottom: 8px; font-size: 13px; color: var(--ink-soft);
+    margin-bottom: 8px; font-size: 13px; color: var(--text-soft); line-height: 1.6;
   }
   .transport-row:last-child { margin-bottom: 0; }
-  .transport-icon { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
-  .transport-row strong { color: var(--ink); font-weight: 500; }
+  .transport-row strong { color: var(--text); font-weight: 500; }
 
-  /* ── MAIN CONTENT ── */
-  .main { max-width: 680px; margin: 0 auto; padding: 2rem; }
+  /* MAIN */
+  .main { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+  .section-label {
+    font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--text-muted); margin-bottom: 1.25rem; text-align: center;
+  }
 
-  /* ── DAY CARDS ── */
+  /* DAY CARDS GRID */
+  .days-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: start;
+  }
   .day {
-    background: white;
-    border-radius: 16px;
-    border: 1px solid rgba(0,0,0,.07);
-    margin-bottom: 1rem;
-    overflow: hidden;
+    background: var(--card); border-radius: 16px; border: 1px solid var(--card-border);
+    overflow: hidden; display: flex; flex-direction: column;
+    transition: border-color .2s, box-shadow .2s;
   }
-  .day-head {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 1rem 1.25rem;
-    cursor: pointer;
-    user-select: none;
-    transition: background .15s;
-  }
-  .day-head:hover { background: rgba(0,0,0,.02); }
+  .day:hover { border-color: rgba(255,255,255,0.15); }
+  .day-head { padding: 1rem 1.25rem .75rem; border-bottom: 1px solid var(--card-border); }
+  .day-num-row { display: flex; align-items: center; gap: 10px; }
   .day-num {
-    width: 40px; height: 40px;
-    border-radius: 10px;
+    width: 36px; height: 36px; border-radius: 9px; flex-shrink: 0;
     display: flex; align-items: center; justify-content: center;
-    font-family: 'DM Serif Display', serif;
-    font-size: 18px;
-    flex-shrink: 0;
+    font-family: 'DM Serif Display', serif; font-size: 17px;
   }
-  .day-meta { flex: 1; }
-  .day-date { font-size: 11px; color: var(--ink-muted); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 2px; }
-  .day-theme { font-size: 15px; font-weight: 500; color: var(--ink); }
-  .day-chevron {
-    font-size: 11px;
-    color: var(--ink-muted);
-    transition: transform .2s;
-    flex-shrink: 0;
-  }
-  .day-chevron.open { transform: rotate(90deg); }
+  .day-date { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 2px; }
+  .day-theme { font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.35; }
 
-  .day-body { display: none; }
-  .day-body.open { display: block; }
-  .day-body-inner { padding: 0 1.25rem 1.25rem; }
-  .day-divider { border: none; border-top: 1px solid rgba(0,0,0,.06); margin-bottom: 1rem; }
+  /* Theme colours */
+  .theme-arrive .day-num  { background: rgba(77,166,255,0.15);  color: var(--blue);   border: 1px solid rgba(77,166,255,0.3);  box-shadow: 0 0 10px rgba(77,166,255,0.2); }
+  .theme-sphere .day-num  { background: rgba(196,106,255,0.15); color: var(--purple); border: 1px solid rgba(196,106,255,0.3); box-shadow: 0 0 10px rgba(196,106,255,0.2); }
+  .theme-hike   .day-num  { background: rgba(0,229,204,0.15);   color: var(--teal);   border: 1px solid rgba(0,229,204,0.3);   box-shadow: 0 0 10px rgba(0,229,204,0.2); }
+  .theme-cirque .day-num  { background: rgba(255,45,143,0.15);  color: var(--pink);   border: 1px solid rgba(255,45,143,0.3);  box-shadow: 0 0 10px rgba(255,45,143,0.2); }
+  .theme-luger  .day-num  { background: rgba(255,208,74,0.15);  color: var(--gold);   border: 1px solid rgba(255,208,74,0.3);  box-shadow: 0 0 10px rgba(255,208,74,0.2); }
+  .theme-fly    .day-num  { background: rgba(77,166,255,0.15);  color: var(--blue);   border: 1px solid rgba(77,166,255,0.3);  box-shadow: 0 0 10px rgba(77,166,255,0.2); }
 
-  .slot { display: flex; gap: 12px; margin-bottom: 1.1rem; }
+  .theme-arrive { box-shadow: inset 0 0 40px rgba(77,166,255,0.03); }
+  .theme-sphere { box-shadow: inset 0 0 40px rgba(196,106,255,0.04); }
+  .theme-hike   { box-shadow: inset 0 0 40px rgba(0,229,204,0.03); }
+  .theme-cirque { box-shadow: inset 0 0 40px rgba(255,45,143,0.03); }
+  .theme-luger  { box-shadow: inset 0 0 40px rgba(255,208,74,0.03); }
+  .theme-fly    { box-shadow: inset 0 0 40px rgba(77,166,255,0.03); }
+
+  .day-body-inner { padding: 1rem 1.25rem; }
+
+  /* TIMELINE SLOTS */
+  .slot { display: flex; gap: 8px; margin-bottom: 1rem; }
   .slot:last-child { margin-bottom: 0; }
   .slot-time {
-    font-size: 11px;
-    color: var(--ink-muted);
-    width: 46px;
-    flex-shrink: 0;
-    padding-top: 3px;
-    font-weight: 500;
-    letter-spacing: .02em;
+    font-size: 10px; color: var(--text-muted); width: 38px; flex-shrink: 0;
+    padding-top: 3px; font-weight: 500; text-align: right;
   }
-  .slot-content {}
-  .slot-title { font-size: 14px; font-weight: 500; color: var(--ink); line-height: 1.4; margin-bottom: 3px; }
-  .slot-desc { font-size: 13px; color: var(--ink-soft); line-height: 1.6; }
-  .slot-badges { margin-top: 5px; display: flex; flex-wrap: wrap; gap: 5px; }
+  .slot-line { width: 16px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; padding-top: 5px; }
+  .slot-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.15); flex-shrink: 0; }
+  .slot-vline { width: 1px; flex: 1; background: rgba(255,255,255,0.06); margin-top: 4px; }
+  .slot:last-child .slot-vline { display: none; }
+  .slot-content { flex: 1; padding-bottom: .25rem; }
+  .slot-title { font-size: 13px; font-weight: 500; color: var(--text); line-height: 1.4; margin-bottom: 3px; }
+  .slot-desc { font-size: 12px; color: var(--text-soft); line-height: 1.65; }
+  .slot-badges { margin-top: 5px; display: flex; flex-wrap: wrap; gap: 4px; }
+
   .badge {
-    font-size: 10px;
-    font-weight: 500;
-    padding: 3px 9px;
-    border-radius: 20px;
-    letter-spacing: .02em;
+    font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 20px; letter-spacing: .02em;
   }
-  .badge-amex { background: var(--gold-light); color: #7A5010; border: 1px solid rgba(200,151,74,.3); }
-  .badge-preg { background: #FFF0F0; color: #903030; border: 1px solid rgba(200,80,80,.2); }
-  .badge-book { background: var(--amber-light); color: #7A4A00; border: 1px solid rgba(212,130,10,.25); }
-  .badge-free { background: var(--teal-light); color: #1A5A50; border: 1px solid rgba(45,122,107,.2); }
+  .badge-amex  { background: rgba(255,208,74,0.1);  color: var(--gold);   border: 1px solid rgba(255,208,74,0.25); }
+  .badge-preg  { background: rgba(255,45,143,0.1);  color: var(--pink);   border: 1px solid rgba(255,45,143,0.2); }
+  .badge-book  { background: rgba(255,140,0,0.1);   color: var(--amber);  border: 1px solid rgba(255,140,0,0.25); }
+  .badge-free  { background: rgba(0,229,204,0.1);   color: var(--teal);   border: 1px solid rgba(0,229,204,0.2); }
+  .badge-tip   { background: rgba(196,106,255,0.1); color: var(--purple); border: 1px solid rgba(196,106,255,0.2); }
 
-  /* theme colors for day number bubbles */
-  .theme-arrive { background: var(--slate-light); color: var(--slate); }
-  .theme-sphere { background: var(--purple-light); color: var(--purple); }
-  .theme-hike   { background: var(--teal-light); color: var(--teal); }
-  .theme-magic  { background: var(--amber-light); color: var(--amber); }
-  .theme-food   { background: var(--coral-light); color: var(--coral); }
-  .theme-fly    { background: var(--slate-light); color: var(--slate); }
-
-  /* ── NOTES ── */
-  .notes-card {
-    background: #FFF8F0;
-    border: 1px solid rgba(200,151,74,.2);
-    border-radius: 16px;
-    padding: 1.25rem;
-    margin-bottom: 1rem;
+  /* BOTTOM INFO GRID */
+  .bottom-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;
   }
-  .notes-title {
-    font-size: 11px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: .08em;
-    color: var(--gold);
-    margin-bottom: .75rem;
+  .info-card {
+    background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 1.25rem;
   }
+  .info-title {
+    font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; margin-bottom: .85rem;
+  }
+  .info-title.gold   { color: var(--gold);   text-shadow: 0 0 8px rgba(255,208,74,0.3); }
+  .info-title.pink   { color: var(--pink);   text-shadow: 0 0 8px rgba(255,45,143,0.3); }
+  .info-title.teal   { color: var(--teal);   text-shadow: 0 0 8px rgba(0,229,204,0.3); }
+  .info-title.purple { color: var(--purple); text-shadow: 0 0 8px rgba(196,106,255,0.3); }
   .note-row {
-    display: flex; gap: 10px;
-    font-size: 13px;
-    color: var(--ink-soft);
-    margin-bottom: .6rem;
-    line-height: 1.6;
+    display: flex; gap: 10px; font-size: 12px; color: var(--text-soft);
+    margin-bottom: .65rem; line-height: 1.65;
   }
   .note-row:last-child { margin-bottom: 0; }
-  .note-row strong { color: var(--ink); font-weight: 500; }
+  .note-row strong { color: var(--text); font-weight: 500; }
+  .note-icon { flex-shrink: 0; opacity: .7; }
 
-  /* ── FOOTER ── */
   footer {
-    text-align: center;
-    padding: 2rem;
-    font-size: 12px;
-    color: var(--ink-muted);
+    text-align: center; padding: 2rem; font-size: 12px; color: var(--text-muted);
+    border-top: 1px solid rgba(255,255,255,0.05);
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 1100px) {
+    .days-grid { grid-template-columns: repeat(2, 1fr); }
+    .bottom-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .days-grid { grid-template-columns: 1fr; }
     .hero, .flight-strip, .hotel-band, .transport-band { padding-left: 1.25rem; padding-right: 1.25rem; }
-    .main { padding: 1.25rem; }
+    .main { padding: 1rem; }
+    .hero-deco { display: none; }
   }
 </style>
 </head>
 <body>
 
 <div class="hero">
+  <div class="hero-deco">♦ ♦ ♦</div>
   <div class="hero-inner">
-    <div class="hero-tag">Trip itinerary</div>
+    <div class="hero-tag">✦ Babymoon Itinerary</div>
     <h1>Las Vegas<br><em>June 2–7, 2026</em></h1>
-    <p class="hero-sub">Mark &amp; Harriet · The Palazzo at The Venetian · 5 nights</p>
+    <p class="hero-sub">Mark &amp; Harriet &nbsp;·&nbsp; The Palazzo at The Venetian &nbsp;·&nbsp; 5 nights</p>
   </div>
 </div>
 
@@ -291,16 +261,16 @@
       <div class="fp-icon">✈</div>
       <div>
         <div class="fp-label">Outbound · Tue Jun 2</div>
-        <div class="fp-value">AC1705 · YYZ 20:35 → LAS 22:29<br>Business class · T1 → T3</div>
-        <div class="fp-ref">Ref: C33ZQD · Aeroplan pts</div>
+        <div class="fp-value">AC1705 · YYZ 20:35 → LAS 22:29<br>Business class · Seats 03C &amp; 03A · T1 → T3</div>
+        <div class="fp-ref">Ref: C33ZQD · Aeroplan pts · US pre-clearance at YYZ</div>
       </div>
     </div>
     <div class="flight-pill">
       <div class="fp-icon">✈</div>
       <div>
-        <div class="fp-label">Return · Sun Jun 7–Mon Jun 8</div>
-        <div class="fp-value">AC1708 · LAS 23:25 → YUL 07:15+1<br>AC405 · YUL 09:10 → YYZ 10:38</div>
-        <div class="fp-ref">Ref: C33ZQD · Business class</div>
+        <div class="fp-label">Return · Sun Jun 7 → Mon Jun 8</div>
+        <div class="fp-value">AC1708 · LAS 23:25 → YUL 07:15+1 (03D &amp; 03F)<br>AC405 · YUL 09:10 → YYZ 10:38 (03A &amp; 03C)</div>
+        <div class="fp-ref">Ref: C33ZQD · Business class both segments</div>
       </div>
     </div>
   </div>
@@ -310,7 +280,7 @@
   <div class="hotel-band-inner">
     <div class="fhr-label">Amex Platinum · Fine Hotels + Resorts</div>
     <div class="hotel-name">The Palazzo at The Venetian</div>
-    <div style="font-size:12px;color:var(--ink-soft);margin-bottom:.6rem;">3325 Las Vegas Blvd S · Check-in Jun 2 · Check-out Jun 7 · Conf. 9092410900428</div>
+    <div class="hotel-conf">3325 Las Vegas Blvd S · Check-in Jun 2 · Check-out Jun 7 · Conf. 9092410900428</div>
     <div class="fhr-pills">
       <span class="fhr-pill">Noon check-in</span>
       <span class="fhr-pill">Room upgrade</span>
@@ -324,358 +294,432 @@
 
 <div class="transport-band">
   <div class="transport-band-inner">
-    <div class="transport-title">Getting around</div>
+    <div class="transport-title">Getting Around</div>
     <div class="transport-row">
-      <div class="transport-icon">🛬</div>
-      <div><strong>Airport → The Palazzo (Jun 2):</strong> Harry Reid T3 is ~10 min from the Strip. Take a rideshare (Lyft/Uber — ~$15–20 USD, pick-up outside T3 arrivals Level 1). No need to book in advance. The Palazzo address: 3325 Las Vegas Blvd S. Arriving ~22:30, rideshare will be fast.</div>
+      <span>🛬</span>
+      <div><strong>Airport → Palazzo (Jun 2):</strong> Harry Reid T3 is ~10 min from the Strip. Rideshare from Level 1 arrivals ~$15–20. No US customs — pre-clearance done at YYZ T1.</div>
     </div>
     <div class="transport-row">
-      <div class="transport-icon">🚗</div>
-      <div><strong>Getting around Las Vegas:</strong> Rideshare everywhere on the Strip — Lyft/Uber readily available. The Venetian/Palazzo is central, so most venues are 5–15 min. For Red Rock Canyon (Day 3), rent a car for the morning (~$40–60 USD) or use a rideshare (~$30 each way).</div>
+      <span>🚗</span>
+      <div><strong>Red Rock Canyon (Jun 4):</strong> Rent a car evening of Jun 3. Enterprise, Alamo, or book via Costco Travel. No timed entry needed Jun 1–Sept 30. Gas up in Las Vegas before leaving.</div>
     </div>
     <div class="transport-row">
-      <div class="transport-icon">🛫</div>
-      <div><strong>The Palazzo → Airport (Jun 7):</strong> Guaranteed 4 pm checkout (Amex FHR). Leave hotel ~18:30 by rideshare. Harry Reid T3 for AC1708 departing 23:25. Arrive airport by 20:00 for US pre-clearance at check-in.</div>
+      <span>🚕</span>
+      <div><strong>Strip transit:</strong> Lyft/Uber everywhere — Sphere ~8 min, Caesars ~6 min, Bellagio ~5 min. The Strip looks walkable on maps but June midday heat (100°F+) makes walking miserable. Rideshare freely.</div>
+    </div>
+    <div class="transport-row">
+      <span>🛫</span>
+      <div><strong>Palazzo → Airport (Jun 7):</strong> 4 pm FHR checkout. Rideshare at 18:30. Terminal 3. Budget 90+ min for US pre-clearance before 23:25 departure.</div>
     </div>
   </div>
 </div>
 
 <main class="main">
+  <div class="section-label">Your 6-Day Babymoon</div>
 
-  <!-- DAY 1 -->
-  <div class="day" id="day1">
-    <div class="day-head" onclick="toggle('day1')">
-      <div class="day-num theme-arrive">1</div>
-      <div class="day-meta">
-        <div class="day-date">Tuesday, June 2</div>
-        <div class="day-theme">Arrive · check in</div>
+  <div class="days-grid">
+
+    <!-- DAY 1 -->
+    <div class="day theme-arrive">
+      <div class="day-head">
+        <div class="day-num-row">
+          <div class="day-num">1</div>
+          <div>
+            <div class="day-date">Tuesday, June 2</div>
+            <div class="day-theme">Arrive &amp; check in</div>
+          </div>
+        </div>
       </div>
-      <div class="day-chevron open" id="chev-day1">▶</div>
-    </div>
-    <div class="day-body open" id="body-day1">
       <div class="day-body-inner">
-        <hr class="day-divider">
         <div class="slot">
           <div class="slot-time">20:35</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">AC1705 departs YYZ Terminal 1</div>
-            <div class="slot-desc">Business class — seats 03C (Mark) and 03A (Harriet). Meal service on board. Duration ~5 hrs.</div>
+            <div class="slot-title">AC1705 departs YYZ T1</div>
+            <div class="slot-desc">Business class, 03C (Mark) &amp; 03A (Harriet). ~5 hr flight with meal service. Recline and decompress.</div>
           </div>
         </div>
         <div class="slot">
           <div class="slot-time">22:29</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Land LAS — Harry Reid Terminal 3</div>
-            <div class="slot-desc">US pre-clearance done in Toronto so no US customs on arrival. Head straight to rideshare pick-up on Level 1 (outside arrivals). Lyft/Uber to The Palazzo ~10 min, ~$15–20 USD.</div>
-            <div class="slot-badges"><span class="badge badge-free">~10 min to hotel</span></div>
+            <div class="slot-title">Land LAS — Harry Reid T3</div>
+            <div class="slot-desc">No US customs — pre-clearance done at YYZ. Walk straight to rideshare Level 1. Lyft/Uber to Palazzo ~10 min, ~$15–20 USD.</div>
+            <div class="slot-badges"><span class="badge badge-free">No customs on arrival</span></div>
           </div>
         </div>
         <div class="slot">
           <div class="slot-time">23:15</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
             <div class="slot-title">Check in — The Palazzo</div>
-            <div class="slot-desc">King bed with sofa, separate living room, deep soaking tub. FHR: request room upgrade at front desk. Noon check-in benefit not in play tonight but late arrival means a quieter check-in.</div>
+            <div class="slot-desc">Request room upgrade at front desk (FHR benefit). Ask for a high floor away from elevators. King suite with deep soaking tub — perfect for Harriet to unwind after flying. Use the tub tonight.</div>
             <div class="slot-badges"><span class="badge badge-amex">✦ FHR: room upgrade</span></div>
           </div>
         </div>
         <div class="slot">
           <div class="slot-time">Late</div>
+          <div class="slot-line"><div class="slot-dot"></div></div>
           <div class="slot-content">
-            <div class="slot-title">In-room room service or Canyon Ranch bar</div>
-            <div class="slot-desc">24-hr room service available. Or a light snack in the hotel — no need to go far tonight. Long day of flying, rest up.</div>
-            <div class="slot-badges"><span class="badge badge-preg">♡ Harriet: take it easy</span></div>
+            <div class="slot-title">24-hr room service</div>
+            <div class="slot-desc">No need to go anywhere. Rest well — you have an early start on Day 3. Set a car rental pickup reminder and pack Day 3 supplies tonight.</div>
+            <div class="slot-badges"><span class="badge badge-preg">♡ Rest, hydrate, unwind</span></div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- DAY 2 -->
-  <div class="day" id="day2">
-    <div class="day-head" onclick="toggle('day2')">
-      <div class="day-num theme-sphere">2</div>
-      <div class="day-meta">
-        <div class="day-date">Wednesday, June 3</div>
-        <div class="day-theme">The Sphere</div>
+    <!-- DAY 2 -->
+    <div class="day theme-sphere">
+      <div class="day-head">
+        <div class="day-num-row">
+          <div class="day-num">2</div>
+          <div>
+            <div class="day-date">Wednesday, June 3</div>
+            <div class="day-theme">Spa · Mott 32 · No Doubt at The Sphere</div>
+          </div>
+        </div>
       </div>
-      <div class="day-chevron" id="chev-day2">▶</div>
-    </div>
-    <div class="day-body" id="body-day2">
       <div class="day-body-inner">
-        <hr class="day-divider">
         <div class="slot">
-          <div class="slot-time">Morning</div>
+          <div class="slot-time">AM</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">FHR breakfast — charged to room</div>
-            <div class="slot-desc">Daily breakfast for two included (min. $60 USD value). Use the $100 F&B credit here if you prefer, or save it for dinner. Must be charged to room to get the credit at checkout.</div>
+            <div class="slot-title">FHR Breakfast — charged to room</div>
+            <div class="slot-desc">Daily breakfast for two (min. $60 USD value). Must be charged to room to credit at checkout. Sleep in.</div>
             <div class="slot-badges"><span class="badge badge-amex">✦ FHR: daily breakfast ×2</span></div>
           </div>
         </div>
         <div class="slot">
-          <div class="slot-time">Noon</div>
+          <div class="slot-time">11:00</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
             <div class="slot-title">Canyon Ranch Spa — prenatal massage</div>
-            <div class="slot-desc">World-class spa inside the Venetian. Book a prenatal massage for Harriet in advance (call hotel before arrival). Mark: gym or pool. Reservation recommended — call 1-888-283-6423.</div>
-            <div class="slot-badges"><span class="badge badge-preg">♡ Prenatal available</span><span class="badge badge-book">⚑ Book in advance</span></div>
+            <div class="slot-desc">World-class spa inside the Venetian. Book Harriet a prenatal massage before arrival — call 1-888-283-6423. Mark: lap pool, gym, or couples treatment. Avoid sauna and steam rooms during pregnancy — Canyon Ranch staff will guide you.</div>
+            <div class="slot-badges"><span class="badge badge-preg">♡ Prenatal massage available</span><span class="badge badge-book">⚑ Book before arrival</span></div>
           </div>
         </div>
         <div class="slot">
-          <div class="slot-time">15:00</div>
+          <div class="slot-time">14:00</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">The Sphere — immersive experience</div>
-            <div class="slot-desc">18,600-seat entertainment venue at the east end of the Strip — 10-min Lyft from Venetian. Current show: confirm at thesphere.com. Note for Harriet: check motion sensitivity advisory before booking (highly immersive visuals). Buy tickets well in advance.</div>
-            <div class="slot-badges"><span class="badge badge-book">⚑ Book tickets ASAP</span><span class="badge badge-preg">♡ Check motion warnings</span></div>
+            <div class="slot-title">Palazzo pool — reserved daybed</div>
+            <div class="slot-desc">Call the hotel in advance to reserve a daybed or cabana. The Venetian/Palazzo pool complex is genuinely spectacular. Light poolside lunch. Rest before tonight.</div>
+            <div class="slot-badges"><span class="badge badge-tip">💡 Reserve daybed in advance</span></div>
           </div>
         </div>
         <div class="slot">
-          <div class="slot-time">19:00</div>
+          <div class="slot-time">18:00</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Dinner — Zuma (The Cosmopolitan)</div>
-            <div class="slot-desc">Contemporary Japanese. Robata-grilled mains, excellent sashimi. Upscale but relaxed. The Cosmopolitan is a 10-min walk or short rideshare south on the Strip. Pregnancy-friendly menu — request well-cooked options.</div>
+            <div class="slot-title">Dinner — Mott 32 (inside The Venetian)</div>
+            <div class="slot-desc">One of the world's most awarded Chinese restaurants — right in your hotel (Palazzo Casino Level 2). Take the tower elevator to avoid casino-floor smoke. Stunning dramatic interior. Must-order: 42-day dry-aged Peking duck (pre-order 24 hrs ahead when booking), Black Truffle XO Scallop dumplings, Iberico pork BBQ. All cooked — no raw items. Book via OpenTable; note pregnancy when reserving.</div>
+            <div class="slot-badges"><span class="badge badge-book">⚑ Book on OpenTable — pre-order duck</span><span class="badge badge-preg">♡ All cooked, no raw</span></div>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">20:15</div>
+          <div class="slot-line"><div class="slot-dot"></div></div>
+          <div class="slot-content">
+            <div class="slot-title">No Doubt at The Sphere — June 3 confirmed</div>
+            <div class="slot-desc">18,600-seat immersive venue wrapped in the world's largest LED screen (160,000 sq ft). 30th anniversary of Tragic Kingdom — Gwen Stefani's first extended Vegas run in 14 years. Seated throughout. If Harriet is sound-sensitive, venue sells hearing protection at the door. ~8 min Lyft from Venetian.</div>
+            <div class="slot-badges"><span class="badge badge-book">⚑ Book at thesphere.com — ASAP</span><span class="badge badge-tip">💡 Hearing protection at door if needed</span></div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- DAY 3 -->
-  <div class="day" id="day3">
-    <div class="day-head" onclick="toggle('day3')">
-      <div class="day-num theme-hike">3</div>
-      <div class="day-meta">
-        <div class="day-date">Thursday, June 4</div>
-        <div class="day-theme">Red Rock Canyon + Ding Tai Fung</div>
+    <!-- DAY 3 -->
+    <div class="day theme-hike">
+      <div class="day-head">
+        <div class="day-num-row">
+          <div class="day-num">3</div>
+          <div>
+            <div class="day-date">Thursday, June 4</div>
+            <div class="day-theme">Red Rock Canyon · Gondola · Ding Tai Fung</div>
+          </div>
+        </div>
       </div>
-      <div class="day-chevron" id="chev-day3">▶</div>
-    </div>
-    <div class="day-body" id="body-day3">
       <div class="day-body-inner">
-        <hr class="day-divider">
         <div class="slot">
-          <div class="slot-time">Morning</div>
+          <div class="slot-time">06:00</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">FHR breakfast + early start</div>
-            <div class="slot-desc">Eat before heading out. Pack water and sunscreen — June desert sun is intense by 9am.</div>
-            <div class="slot-badges"><span class="badge badge-amex">✦ FHR: daily breakfast ×2</span></div>
+            <div class="slot-title">Early departure — beat the heat</div>
+            <div class="slot-desc">June temperatures hit 100°F+ by 10am — this early window is non-negotiable. Pack water (2L each), sunscreen, hats, and snacks the night before. Collect rental car.</div>
+            <div class="slot-badges"><span class="badge badge-preg">♡ Beat the heat — early only</span><span class="badge badge-book">⚑ Reserve car in advance</span></div>
           </div>
         </div>
         <div class="slot">
-          <div class="slot-time">08:30</div>
+          <div class="slot-time">07:15</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Drive to Red Rock Canyon (~35 min)</div>
-            <div class="slot-desc">Rent a car for the morning (~$40–60 USD) or Lyft each way (~$30 one way). Take W Charleston Blvd west to the scenic loop entrance. Entrance fee ~$20/vehicle.</div>
-            <div class="slot-badges"><span class="badge badge-free">35 min west of Strip</span></div>
+            <div class="slot-title">Red Rock Canyon — 13-mile Scenic Loop</div>
+            <div class="slot-desc">No timed entry reservation needed June 1–Sept 30. Pay $20/vehicle. Drive the one-way loop at your pace — pull off at Calico Hills overlook (most photogenic), Red Rock Wash, White Rock Springs. The experience is mostly from the car with short walks to paved viewpoints. Limit walking to under 20 min per stop before 9am. Stay in AC between stops. Stunning crimson sandstone formations — genuinely unlike anywhere on Earth.</div>
+            <div class="slot-badges"><span class="badge badge-free">No timed entry needed in June</span><span class="badge badge-preg">♡ Stay in AC, paved flat viewpoints only</span></div>
           </div>
         </div>
         <div class="slot">
-          <div class="slot-time">09:15</div>
+          <div class="slot-time">09:30</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Calico Hills Loop — 2.5 miles, easy</div>
-            <div class="slot-desc">Flat to gently rolling trail through dramatic red sandstone formations. Zero scrambling required. Stunning visuals, pregnancy-appropriate. Bring 2L of water each, hats essential. Back to car by 11:00.</div>
-            <div class="slot-badges"><span class="badge badge-preg">♡ Easy, flat trail</span><span class="badge badge-free">No strenuous sections</span></div>
+            <div class="slot-title">Return to hotel — rest</div>
+            <div class="slot-desc">~35 min drive back. Return car. Shower, nap, recover. The early start means you're back by 10:30 with a full day ahead.</div>
           </div>
         </div>
         <div class="slot">
-          <div class="slot-time">12:00</div>
+          <div class="slot-time">14:00</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Return to hotel — pool/rest</div>
-            <div class="slot-desc">Afternoon at the Venetian pool or spa. Early hike means a relaxed afternoon.</div>
+            <div class="slot-title">Venetian Indoor Grand Canal Gondola Ride</div>
+            <div class="slot-desc">Hidden gem most visitors skip — an indoor gondola through The Venetian's Grand Canal Shoppes. Quiet, air-conditioned, ~15 min. Optional singing gondolier. Genuinely romantic, zero motion concern, perfectly safe for pregnancy. ~$30/person. Book at the ground-floor gondola dock inside the Shoppes.</div>
+            <div class="slot-badges"><span class="badge badge-free">~$30/person, indoor AC</span><span class="badge badge-preg">♡ Gentle, romantic, safe</span></div>
           </div>
         </div>
         <div class="slot">
           <div class="slot-time">18:30</div>
+          <div class="slot-line"><div class="slot-dot"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Dinner — Ding Tai Fung, Grand Canal Shoppes</div>
-            <div class="slot-desc">You're literally staying there — it's inside the Venetian. Classic XLB, shrimp fried rice, green beans, wonton soup. No reservation usually needed for an early dinner. Confirm MSG notes with server for Harriet.</div>
-            <div class="slot-badges"><span class="badge badge-preg">♡ Confirm MSG/dietary with server</span></div>
+            <div class="slot-title">Dinner — Ding Tai Fung (Grand Canal Shoppes)</div>
+            <div class="slot-desc">You're literally staying upstairs. Famous XLB soup dumplings, shrimp fried rice, garlic green beans, wonton soup. All cooked — pregnancy-safe. Confirm MSG preference with server. No reservation usually needed at 18:30 on a Thursday.</div>
+            <div class="slot-badges"><span class="badge badge-preg">♡ All cooked — confirm MSG with server</span><span class="badge badge-free">5-min walk from room</span></div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- DAY 4 -->
-  <div class="day" id="day4">
-    <div class="day-head" onclick="toggle('day4')">
-      <div class="day-num theme-magic">4</div>
-      <div class="day-meta">
-        <div class="day-date">Friday, June 5</div>
-        <div class="day-theme">Magic show — Penn &amp; Teller</div>
+    <!-- DAY 4 -->
+    <div class="day theme-cirque">
+      <div class="day-head">
+        <div class="day-num-row">
+          <div class="day-num">4</div>
+          <div>
+            <div class="day-date">Friday, June 5</div>
+            <div class="day-theme">Bellagio · Fine Dining · "O" Cirque du Soleil</div>
+          </div>
+        </div>
       </div>
-      <div class="day-chevron" id="chev-day4">▶</div>
-    </div>
-    <div class="day-body" id="body-day4">
       <div class="day-body-inner">
-        <hr class="day-divider">
         <div class="slot">
-          <div class="slot-time">Morning</div>
+          <div class="slot-time">AM</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">FHR breakfast + leisurely AM</div>
-            <div class="slot-desc">Use $100 F&B credit if not yet applied — must be charged to room. Grand Canal Shoppes browse, spa, or pool.</div>
-            <div class="slot-badges"><span class="badge badge-amex">✦ FHR: daily breakfast ×2</span><span class="badge badge-amex">✦ Use $100 F&amp;B credit</span></div>
+            <div class="slot-title">FHR Breakfast + leisurely morning</div>
+            <div class="slot-desc">Your most relaxed full day. Charge breakfast to room. No agenda until noon — pool, Shoppes, or sleep in.</div>
+            <div class="slot-badges"><span class="badge badge-amex">✦ FHR: daily breakfast ×2</span></div>
           </div>
         </div>
         <div class="slot">
-          <div class="slot-time">19:00</div>
+          <div class="slot-time">11:30</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Dinner — Lavo Italian Restaurant</div>
-            <div class="slot-desc">Venetian property — walkable from your room. Northern Italian, excellent pasta, relaxed upscale vibe. Good pre-show dinner pacing.</div>
+            <div class="slot-title">Bellagio Conservatory &amp; Botanical Garden</div>
+            <div class="slot-desc">Free, open to the public — 5-min Lyft. Bellagio's stunning seasonal floral installation. Summer display is spectacular. Access directly from hotel lobby, no casino floor required. Quiet, non-smoky, genuinely beautiful — 20–30 min well spent. The kind of thing most Vegas visitors walk right past.</div>
+            <div class="slot-badges"><span class="badge badge-free">Free · No casino floor needed</span><span class="badge badge-preg">♡ Calm, peaceful, beautiful</span></div>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">13:00</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
+          <div class="slot-content">
+            <div class="slot-title">Forum Shops at Caesars — rest &amp; browse</div>
+            <div class="slot-desc">Attached to Caesars next door to Bellagio. Enormous air-conditioned luxury mall with a Roman fountain centrepiece. Browse, sit, people-watch. Good rest spot mid-day before dinner.</div>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">17:00</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
+          <div class="slot-content">
+            <div class="slot-title">Dinner — é by José Andrés (The Cosmopolitan)</div>
+            <div class="slot-desc">Only 8 seats per seating — the most intimate dining experience in Vegas. Chef's counter tasting menu inside Jaleo. Book immediately via OpenTable or call The Cosmopolitan. Inform them of the pregnancy — they will customize every course, eliminate raw items, and make it a genuinely special babymoon experience. Alternate if unavailable: Zuma at The Cosmopolitan (contemporary Japanese, same building, excellent).</div>
+            <div class="slot-badges"><span class="badge badge-book">⚑ Book NOW — weeks in advance</span><span class="badge badge-preg">♡ Inform of pregnancy — they'll customize</span></div>
           </div>
         </div>
         <div class="slot">
           <div class="slot-time">21:00</div>
+          <div class="slot-line"><div class="slot-dot"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Penn &amp; Teller — Rio Las Vegas</div>
-            <div class="slot-desc">The best magic show in Las Vegas. Tue/Wed/Fri/Sat nights. ~10-min Lyft from Venetian (Rio is just off-Strip). No Cirque, no acrobatics — pure technical brilliance and comedy. Harriet will love the humour; Mark, the methodology. Book at pennandteller.com.</div>
-            <div class="slot-badges"><span class="badge badge-book">⚑ Book at pennandteller.com</span><span class="badge badge-free">No Cirque vibes whatsoever</span></div>
+            <div class="slot-title">"O" by Cirque du Soleil — Bellagio</div>
+            <div class="slot-desc">One of the greatest theatrical shows on Earth. A 1.5-million-gallon pool appears and disappears mid-show, with aerial acrobats, synchronized swimmers, and live theatre combined. Fully seated throughout, no strobe lights, no sudden loud effects. June 5 (Fri) 9pm confirmed. Book at cirquedusoleil.com. Bellagio is 5-min Lyft from Venetian.</div>
+            <div class="slot-badges"><span class="badge badge-book">⚑ Book at cirquedusoleil.com</span><span class="badge badge-preg">♡ Fully seated, no strobes</span></div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- DAY 5 -->
-  <div class="day" id="day5">
-    <div class="day-head" onclick="toggle('day5')">
-      <div class="day-num theme-food">5</div>
-      <div class="day-meta">
-        <div class="day-date">Saturday, June 6</div>
-        <div class="day-theme">Strip walk + fine dining</div>
+    <!-- DAY 5 -->
+    <div class="day theme-luger">
+      <div class="day-head">
+        <div class="day-num-row">
+          <div class="day-num">5</div>
+          <div>
+            <div class="day-date">Saturday, June 6</div>
+            <div class="day-theme">High Roller · Peter Luger · Helicopter Night Flight</div>
+          </div>
+        </div>
       </div>
-      <div class="day-chevron" id="chev-day5">▶</div>
-    </div>
-    <div class="day-body" id="body-day5">
       <div class="day-body-inner">
-        <hr class="day-divider">
         <div class="slot">
-          <div class="slot-time">Morning</div>
+          <div class="slot-time">AM</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">FHR breakfast — sleep in</div>
-            <div class="slot-desc">4 pm late checkout tomorrow — no rush on this trip. Leisurely morning.</div>
-            <div class="slot-badges"><span class="badge badge-amex">✦ FHR: daily breakfast ×2</span></div>
+            <div class="slot-title">FHR Breakfast — use $100 F&amp;B credit</div>
+            <div class="slot-desc">If the F&B credit hasn't been used yet, apply it today. Must be charged to room. Morning: pool or final Canyon Ranch treatment.</div>
+            <div class="slot-badges"><span class="badge badge-amex">✦ FHR: breakfast + $100 F&amp;B credit</span></div>
           </div>
         </div>
         <div class="slot">
-          <div class="slot-time">Afternoon</div>
+          <div class="slot-time">15:30</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Walk the Strip — Venetian to New York New York</div>
-            <div class="slot-desc">Stroll south: Venetian → Bellagio fountains (free show every 15–30 min, spectacular) → CityCenter → Park MGM → New York New York. Flat walking, air-conditioned casino shortcuts. Limit to ~90 min of walking for Harriet — stop and rest as needed. Ride-share back.</div>
-            <div class="slot-badges"><span class="badge badge-preg">♡ Flat, take breaks, use AC indoors</span><span class="badge badge-free">Bellagio fountains: free</span></div>
+            <div class="slot-title">High Roller Observation Wheel — twilight boarding</div>
+            <div class="slot-desc">World's tallest observation wheel (550 ft / 168m) at the LINQ Promenade. 30-min full rotation in a fully enclosed, air-conditioned glass gondola. Board at 15:30 so you start in daylight and end in the golden hour. Zero physical exertion, pregnancy-safe, spectacular panoramic Strip views. Buy at the wheel or in advance at caesars.com. ~15-min Lyft from Venetian.</div>
+            <div class="slot-badges"><span class="badge badge-preg">♡ Enclosed AC, zero exertion</span><span class="badge badge-free">30-min ride, stunning views</span></div>
           </div>
         </div>
         <div class="slot">
           <div class="slot-time">18:30</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Dinner — é by José Andrés (The Cosmopolitan)</div>
-            <div class="slot-desc">Counter-dining tasting menu inside Jaleo. Only 8 seats per seating — this is the hardest reservation in Vegas. Book immediately at opentable.com or call The Cosmopolitan. Exceptional, intimate experience. Let them know about the pregnancy — they'll accommodate beautifully.</div>
-            <div class="slot-badges"><span class="badge badge-book">⚑ Book NOW — weeks out</span><span class="badge badge-preg">♡ Inform them of pregnancy</span></div>
+            <div class="slot-title">Dinner — Peter Luger at Caesars Palace</div>
+            <div class="slot-desc">Brooklyn's legendary dry-aged steakhouse — now at Caesars (3570 Las Vegas Blvd S, ~6-min Lyft). USDA Prime porterhouse served sizzling tableside. Order: Porterhouse for Two, thick-cut bacon starter, creamed spinach, German fried potatoes. Pregnancy note: request medium-well or well-done — they'll do it without complaint. Reserve via OpenTable or call (702) 731-7267. Saturday dinner books fast.</div>
+            <div class="slot-badges"><span class="badge badge-book">⚑ Book via OpenTable or (702) 731-7267</span><span class="badge badge-preg">♡ Request medium-well or well-done</span></div>
           </div>
         </div>
         <div class="slot">
-          <div class="slot-time">Post-dinner</div>
+          <div class="slot-time">21:00</div>
+          <div class="slot-line"><div class="slot-dot"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Bellagio fountains — evening show</div>
-            <div class="slot-desc">On the walk home or a short stop. The night show with music is genuinely magical. Free, 5 min.</div>
-            <div class="slot-badges"><span class="badge badge-free">Free · 5 min walk from Cosmo</span></div>
+            <div class="slot-title">Maverick Helicopters — Strip Night Flight</div>
+            <div class="slot-desc">~12-min flight over the neon Strip in a luxury Airbus helicopter with wrap-around glass. Seeing Las Vegas from the air at night is genuinely surreal — the lights, the scale. Hotel pickup from Palazzo available — request at booking. Arrive 30 min early for weigh-in (done professionally and privately). Maverick has flown thousands of pregnant passengers safely; consult your OB before booking. Book at maverickhelicopter.com — 2+ weeks ahead.</div>
+            <div class="slot-badges"><span class="badge badge-book">⚑ maverickhelicopter.com — book 2 wks out</span><span class="badge badge-preg">♡ Consult OB first — generally safe</span></div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- DAY 6 -->
-  <div class="day" id="day6">
-    <div class="day-head" onclick="toggle('day6')">
-      <div class="day-num theme-fly">6</div>
-      <div class="day-meta">
-        <div class="day-date">Sunday, June 7</div>
-        <div class="day-theme">Late checkout · fly home</div>
+    <!-- DAY 6 -->
+    <div class="day theme-fly">
+      <div class="day-head">
+        <div class="day-num-row">
+          <div class="day-num">6</div>
+          <div>
+            <div class="day-date">Sunday, June 7</div>
+            <div class="day-theme">Late checkout · Bellagio Fountains · Fly home</div>
+          </div>
+        </div>
       </div>
-      <div class="day-chevron" id="chev-day6">▶</div>
-    </div>
-    <div class="day-body" id="body-day6">
       <div class="day-body-inner">
-        <hr class="day-divider">
         <div class="slot">
-          <div class="slot-time">Morning</div>
+          <div class="slot-time">AM</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Final FHR breakfast</div>
-            <div class="slot-desc">Last morning — no rush. Enjoy the last included breakfast.</div>
+            <div class="slot-title">Final FHR Breakfast — no alarm</div>
+            <div class="slot-desc">4 pm guaranteed checkout. Absolutely no rush. Last morning — sleep in, long breakfast, full enjoyment.</div>
             <div class="slot-badges"><span class="badge badge-amex">✦ FHR: daily breakfast ×2</span></div>
           </div>
         </div>
         <div class="slot">
-          <div class="slot-time">Midday</div>
+          <div class="slot-time">11:00</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Pool / Grand Canal Shoppes</div>
-            <div class="slot-desc">4 pm checkout — use the afternoon. Pool, last-minute shopping in the Shoppes, or a final spa visit.</div>
+            <div class="slot-title">Pool, Shoppes, or final spa visit</div>
+            <div class="slot-desc">Full half-day to use. Palazzo pool, last Grand Canal Shoppes browse, or a final Canyon Ranch treatment. Apply any remaining F&amp;B credit to room charges.</div>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">15:00</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
+          <div class="slot-content">
+            <div class="slot-title">Bellagio Fountains — last Vegas moment</div>
+            <div class="slot-desc">5-min Lyft. Free show runs every 15–30 min from the sidewalk. Tip: time it for "Time to Say Goodbye" (Andrea Bocelli) — the most moving pairing in the show rotation. The late-afternoon sun on the water is spectacular.</div>
+            <div class="slot-badges"><span class="badge badge-free">Free · Every 15–30 min</span></div>
           </div>
         </div>
         <div class="slot">
           <div class="slot-time">16:00</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Check out (guaranteed 4 pm)</div>
-            <div class="slot-desc">Amex FHR benefit — hard guaranteed checkout time. Drop bags with bell desk and use lobby until ready to leave. Pay-at-hotel charges: ~$424 CAD (resort fee + taxes) will be billed now.</div>
+            <div class="slot-title">Checkout — guaranteed 4 pm</div>
+            <div class="slot-desc">Drop bags with bell desk. Resort fee + taxes (~$424 CAD) billed now. Use hotel lobby lounge until departure time.</div>
             <div class="slot-badges"><span class="badge badge-amex">✦ FHR: guaranteed 4 pm checkout</span></div>
           </div>
         </div>
         <div class="slot">
           <div class="slot-time">18:30</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Rideshare to Harry Reid Airport</div>
-            <div class="slot-desc">~10 min. Terminal 3. US pre-clearance at check-in — budget 90 min+ before departure. Departure AC1708 at 23:25.</div>
+            <div class="slot-title">Rideshare → Harry Reid T3</div>
+            <div class="slot-desc">~10 min. Budget 90+ min for US pre-clearance at check-in before 23:25 departure. AC1708 seats: 03D (Mark), 03F (Harriet).</div>
           </div>
         </div>
         <div class="slot">
           <div class="slot-time">23:25</div>
+          <div class="slot-line"><div class="slot-dot"></div></div>
           <div class="slot-content">
-            <div class="slot-title">AC1708 departs LAS → YUL</div>
-            <div class="slot-desc">Business class. Breakfast service. Connects in Montreal: AC405 YUL 09:10 → YYZ 10:38 Mon Jun 8. Seats: LAS→YUL 03D (Mark), 03F (Harriet). YUL→YYZ 03A (Mark), 03C (Harriet).</div>
+            <div class="slot-title">AC1708 LAS → YUL → YYZ</div>
+            <div class="slot-desc">Business class, breakfast service. Connects YUL: AC405 09:10 → YYZ 10:38. Seats YUL→YYZ: 03A (Mark), 03C (Harriet). Home Mon Jun 8.</div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- BOOKING CHECKLIST -->
-  <div class="notes-card">
-    <div class="notes-title">Booking checklist</div>
-    <div class="note-row">
-      <div>⚑</div>
-      <div><strong>é by José Andrés</strong> — 8 seats per seating, book immediately. OpenTable or call The Cosmopolitan. Mention pregnancy.</div>
+  </div><!-- /days-grid -->
+
+  <!-- INFO CARDS -->
+  <div class="bottom-grid">
+
+    <div class="info-card">
+      <div class="info-title gold">⚑ Booking Checklist — Action Required</div>
+      <div class="note-row"><div class="note-icon">⚑</div><div><strong>No Doubt at The Sphere (Jun 3)</strong> — thesphere.com or Ticketmaster. Wed Jun 3 is a confirmed show date. Book immediately — final six shows of the residency.</div></div>
+      <div class="note-row"><div class="note-icon">⚑</div><div><strong>é by José Andrés (Jun 5)</strong> — OpenTable or call The Cosmopolitan. Only 8 seats per seating. Book weeks in advance. Mention pregnancy for menu customization.</div></div>
+      <div class="note-row"><div class="note-icon">⚑</div><div><strong>"O" Cirque du Soleil (Jun 5)</strong> — cirquedusoleil.com. Fri Jun 5, 9pm show confirmed. Book now.</div></div>
+      <div class="note-row"><div class="note-icon">⚑</div><div><strong>Mott 32 (Jun 3)</strong> — OpenTable. When booking, request the 42-day Peking duck — must be ordered 24 hrs in advance. Note pregnancy.</div></div>
+      <div class="note-row"><div class="note-icon">⚑</div><div><strong>Peter Luger (Jun 6)</strong> — OpenTable or call (702) 731-7267. Saturday dinner fills fast.</div></div>
+      <div class="note-row"><div class="note-icon">⚑</div><div><strong>Canyon Ranch Spa (Jun 3)</strong> — Prenatal massage for Harriet. Call 1-888-283-6423 before arrival.</div></div>
+      <div class="note-row"><div class="note-icon">⚑</div><div><strong>Maverick Helicopter (Jun 6)</strong> — maverickhelicopter.com. Book 2+ weeks ahead. Request Palazzo hotel pickup.</div></div>
+      <div class="note-row"><div class="note-icon">⚑</div><div><strong>Rental Car (Jun 4)</strong> — Reserve via Enterprise, Alamo, or Costco Travel. Pick up evening of Jun 3, return morning of Jun 4.</div></div>
+      <div class="note-row"><div class="note-icon">⚑</div><div><strong>Palazzo Pool Daybed (Jun 3)</strong> — Call hotel to reserve a daybed/cabana in advance for the afternoon.</div></div>
     </div>
-    <div class="note-row">
-      <div>⚑</div>
-      <div><strong>The Sphere</strong> — Buy tickets at thesphere.com. Check motion sensitivity notice for Harriet.</div>
+
+    <div class="info-card">
+      <div class="info-title pink">♡ Babymoon Essentials</div>
+      <div class="note-row"><div class="note-icon">♡</div><div><strong>Avoid casino smoke:</strong> Route through hotel towers and shopping arcades, not the casino floor. The Venetian/Palazzo has clear tower routes — ask hotel staff for the smoke-free path from your room to the Strip.</div></div>
+      <div class="note-row"><div class="note-icon">♡</div><div><strong>Hydration is critical:</strong> Vegas air is ~5% humidity — drier than any Canadian city. Pregnancy increases fluid needs. Keep a large water bottle with you everywhere, especially in the car at Red Rock.</div></div>
+      <div class="note-row"><div class="note-icon">♡</div><div><strong>June heat:</strong> Do all outdoor activity before 10am or after 6pm. Midday heat hits 105°F+ with brutal UV. Rideshare freely — no pride about walking the Strip in that heat, especially while pregnant.</div></div>
+      <div class="note-row"><div class="note-icon">♡</div><div><strong>Prenatal pillow:</strong> Pack a small pregnancy wedge pillow for 5 nights of hotel sleep. The Palazzo soaking tub is excellent for leg and back relief — use it every evening.</div></div>
+      <div class="note-row"><div class="note-icon">♡</div><div><strong>Sauna + steam rooms:</strong> Off-limits during pregnancy. Canyon Ranch staff are experienced — mention the pregnancy and they will guide you to appropriate treatments without any awkwardness.</div></div>
+      <div class="note-row"><div class="note-icon">♡</div><div><strong>Flying note:</strong> Pressurized cabin is fine for pregnancy. The late return flight (23:25) is long — business class flat-bed makes it manageable. Hydrate extra on both flights.</div></div>
+      <div class="note-row"><div class="note-icon">♡</div><div><strong>Nearest hospital:</strong> Sunrise Hospital &amp; Medical Center, 3186 S Maryland Pkwy — ~10 min from the Strip. Store the address before you go. Not something you'll need, but smart to have.</div></div>
     </div>
-    <div class="note-row">
-      <div>⚑</div>
-      <div><strong>Penn &amp; Teller</strong> — pennandteller.com. Fri Jun 5 show. Book ahead.</div>
+
+    <div class="info-card">
+      <div class="info-title teal">💡 What Most People Miss</div>
+      <div class="note-row"><div class="note-icon">💡</div><div><strong>Mott 32 Peking duck:</strong> Must be ordered 24 hours ahead when making your reservation. This is the best Peking duck in Las Vegas — carved tableside. Don't miss it; mention it when you call to book.</div></div>
+      <div class="note-row"><div class="note-icon">💡</div><div><strong>Bellagio fountain timing:</strong> "Time to Say Goodbye" (Andrea Bocelli, ~8pm) is the most emotional and visually spectacular pairing. The daytime shows are beautiful, but the lit-up night version is in a different league entirely.</div></div>
+      <div class="note-row"><div class="note-icon">💡</div><div><strong>Venetian gondola — go Thursday:</strong> The indoor Grand Canal gondola gets crowded on weekends. Going Jun 4 (Thursday) mid-afternoon means minimal wait and a quieter, more intimate experience.</div></div>
+      <div class="note-row"><div class="note-icon">💡</div><div><strong>Red Rock Canyon best stop:</strong> The Calico Hills pull-off is the most photogenic by a significant margin. A flat 5-min walk from the parking area reaches the first overlook — worth it before 8am when it's cool and quiet.</div></div>
+      <div class="note-row"><div class="note-icon">💡</div><div><strong>Peter Luger — Vegas accepts cards:</strong> The legendary Brooklyn original is cash-only, but the Caesars Palace Vegas location accepts all major credit cards. No ATM scramble needed.</div></div>
+      <div class="note-row"><div class="note-icon">💡</div><div><strong>High Roller board at 15:30:</strong> Starting in daylight and ending in the golden/neon hour gives you both views in one 30-min ride. Far better than boarding fully after dark.</div></div>
+      <div class="note-row"><div class="note-icon">💡</div><div><strong>Palazzo tower path:</strong> Your hotel room is in the Palazzo tower. You can reach Mott 32, DTF, the Grand Canal Shoppes, and the casino exits entirely via tower corridors and shopping levels — no casino floor required, minimal smoke exposure.</div></div>
     </div>
-    <div class="note-row">
-      <div>⚑</div>
-      <div><strong>Canyon Ranch Spa</strong> — Prenatal massage for Harriet. Call 1-888-283-6423 before arrival.</div>
+
+    <div class="info-card">
+      <div class="info-title purple">🚁 Helicopter — What to Know</div>
+      <div class="note-row"><div class="note-icon">🚁</div><div><strong>Strip Night Flight vs Grand Canyon:</strong> For a babymoon, the Strip Night Flight (~12 min, ~$100/person) is the right choice. Grand Canyon West Rim tours (~4 hrs) are spectacular but exhausting, involve landing in 105°F desert heat, and are too demanding for this trip. Save the canyon for a future visit.</div></div>
+      <div class="note-row"><div class="note-icon">🚁</div><div><strong>Maverick vs Papillon:</strong> Maverick Helicopters (maverickhelicopter.com) is preferred for Strip flights — newer Airbus fleet, larger wrap-around windows, smoother boarding process. Both are licensed and reputable.</div></div>
+      <div class="note-row"><div class="note-icon">🚁</div><div><strong>Weigh-in:</strong> All passengers are weighed for seating configuration (weight &amp; balance). This is standard aviation procedure, handled professionally and privately. Arrive 30 min early as instructed.</div></div>
+      <div class="note-row"><div class="note-icon">🚁</div><div><strong>OB clearance:</strong> At low-level Strip altitude, cabin pressure is not a concern. Maverick has safely flown thousands of pregnant passengers. Still, get verbal OB sign-off before booking — keep it in writing if your doctor has any concerns about the trimester.</div></div>
+      <div class="note-row"><div class="note-icon">🚁</div><div><strong>Hotel pickup:</strong> Request Palazzo pickup when booking. No rideshare needed that night — they come to you. Confirm pickup time and meeting point when they confirm your reservation.</div></div>
     </div>
-    <div class="note-row">
-      <div>♡</div>
-      <div><strong>Pregnancy reminders:</strong> Avoid casino gaming floor smoke, confirm MSG with DTF server, check Sphere motion warnings, stay hydrated at Red Rock, rest as needed, all hikes are flat/easy.</div>
-    </div>
+
   </div>
 
 </main>
 
 <footer>
-  Mark &amp; Harriet · Las Vegas June 2026 · Generated May 2026
+  Mark &amp; Harriet &nbsp;·&nbsp; Las Vegas Babymoon June 2026 &nbsp;·&nbsp; Updated May 2026
 </footer>
 
-<script>
-function toggle(id) {
-  const body = document.getElementById('body-' + id);
-  const chev = document.getElementById('chev-' + id);
-  const isOpen = body.classList.contains('open');
-  body.classList.toggle('open', !isOpen);
-  chev.classList.toggle('open', !isOpen);
-}
-</script>
 </body>
 </html>
