@@ -37,21 +37,18 @@
   .hero {
     background: linear-gradient(160deg, #0D0520 0%, #060410 60%, #000C18 100%);
     padding: 3.5rem 2rem 3rem;
-    position: relative;
-    overflow: hidden;
+    position: relative; overflow: hidden;
     border-bottom: 1px solid rgba(255,208,74,0.15);
   }
   .hero::before {
-    content: '';
-    position: absolute; inset: 0;
+    content: ''; position: absolute; inset: 0;
     background:
       radial-gradient(ellipse at 60% 30%, rgba(255,45,143,0.12) 0%, transparent 55%),
       radial-gradient(ellipse at 20% 80%, rgba(0,229,204,0.08) 0%, transparent 50%),
       radial-gradient(ellipse at 90% 70%, rgba(196,106,255,0.08) 0%, transparent 50%);
   }
   .hero::after {
-    content: '';
-    position: absolute;
+    content: ''; position: absolute;
     top: 0; left: 0; right: 0; height: 2px;
     background: linear-gradient(90deg, transparent, var(--pink), var(--gold), var(--teal), transparent);
     opacity: 0.8;
@@ -66,8 +63,7 @@
   }
   .hero h1 {
     font-family: 'DM Serif Display', serif;
-    font-size: clamp(2.6rem, 7vw, 4.2rem); line-height: 1.05; color: white;
-    margin-bottom: .6rem;
+    font-size: clamp(2.6rem, 7vw, 4.2rem); line-height: 1.05; color: white; margin-bottom: .6rem;
     text-shadow: 0 0 40px rgba(255,45,143,0.3), 0 0 80px rgba(255,45,143,0.1);
   }
   .hero h1 em {
@@ -150,7 +146,7 @@
   .day {
     background: var(--card); border-radius: 16px; border: 1px solid var(--card-border);
     overflow: hidden; display: flex; flex-direction: column;
-    transition: border-color .2s, box-shadow .2s;
+    transition: border-color .2s;
   }
   .day:hover { border-color: rgba(255,255,255,0.15); }
   .day-head { padding: 1rem 1.25rem .75rem; border-bottom: 1px solid var(--card-border); }
@@ -163,20 +159,19 @@
   .day-date { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 2px; }
   .day-theme { font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.35; }
 
-  /* Theme colours */
   .theme-arrive .day-num  { background: rgba(77,166,255,0.15);  color: var(--blue);   border: 1px solid rgba(77,166,255,0.3);  box-shadow: 0 0 10px rgba(77,166,255,0.2); }
-  .theme-sphere .day-num  { background: rgba(196,106,255,0.15); color: var(--purple); border: 1px solid rgba(196,106,255,0.3); box-shadow: 0 0 10px rgba(196,106,255,0.2); }
-  .theme-hike   .day-num  { background: rgba(0,229,204,0.15);   color: var(--teal);   border: 1px solid rgba(0,229,204,0.3);   box-shadow: 0 0 10px rgba(0,229,204,0.2); }
-  .theme-cirque .day-num  { background: rgba(255,45,143,0.15);  color: var(--pink);   border: 1px solid rgba(255,45,143,0.3);  box-shadow: 0 0 10px rgba(255,45,143,0.2); }
-  .theme-luger  .day-num  { background: rgba(255,208,74,0.15);  color: var(--gold);   border: 1px solid rgba(255,208,74,0.3);  box-shadow: 0 0 10px rgba(255,208,74,0.2); }
-  .theme-fly    .day-num  { background: rgba(77,166,255,0.15);  color: var(--blue);   border: 1px solid rgba(77,166,255,0.3);  box-shadow: 0 0 10px rgba(77,166,255,0.2); }
+  .theme-explore .day-num { background: rgba(0,229,204,0.15);   color: var(--teal);   border: 1px solid rgba(0,229,204,0.3);   box-shadow: 0 0 10px rgba(0,229,204,0.2); }
+  .theme-desert .day-num  { background: rgba(255,140,0,0.15);   color: var(--amber);  border: 1px solid rgba(255,140,0,0.3);   box-shadow: 0 0 10px rgba(255,140,0,0.2); }
+  .theme-magic .day-num   { background: rgba(196,106,255,0.15); color: var(--purple); border: 1px solid rgba(196,106,255,0.3); box-shadow: 0 0 10px rgba(196,106,255,0.2); }
+  .theme-luger .day-num   { background: rgba(255,208,74,0.15);  color: var(--gold);   border: 1px solid rgba(255,208,74,0.3);  box-shadow: 0 0 10px rgba(255,208,74,0.2); }
+  .theme-fly .day-num     { background: rgba(77,166,255,0.15);  color: var(--blue);   border: 1px solid rgba(77,166,255,0.3);  box-shadow: 0 0 10px rgba(77,166,255,0.2); }
 
-  .theme-arrive { box-shadow: inset 0 0 40px rgba(77,166,255,0.03); }
-  .theme-sphere { box-shadow: inset 0 0 40px rgba(196,106,255,0.04); }
-  .theme-hike   { box-shadow: inset 0 0 40px rgba(0,229,204,0.03); }
-  .theme-cirque { box-shadow: inset 0 0 40px rgba(255,45,143,0.03); }
-  .theme-luger  { box-shadow: inset 0 0 40px rgba(255,208,74,0.03); }
-  .theme-fly    { box-shadow: inset 0 0 40px rgba(77,166,255,0.03); }
+  .theme-arrive  { box-shadow: inset 0 0 40px rgba(77,166,255,0.03); }
+  .theme-explore { box-shadow: inset 0 0 40px rgba(0,229,204,0.03); }
+  .theme-desert  { box-shadow: inset 0 0 40px rgba(255,140,0,0.03); }
+  .theme-magic   { box-shadow: inset 0 0 40px rgba(196,106,255,0.04); }
+  .theme-luger   { box-shadow: inset 0 0 40px rgba(255,208,74,0.03); }
+  .theme-fly     { box-shadow: inset 0 0 40px rgba(77,166,255,0.03); }
 
   .day-body-inner { padding: 1rem 1.25rem; }
 
@@ -206,9 +201,7 @@
   .badge-tip   { background: rgba(196,106,255,0.1); color: var(--purple); border: 1px solid rgba(196,106,255,0.2); }
 
   /* BOTTOM INFO GRID */
-  .bottom-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;
-  }
+  .bottom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
   .info-card {
     background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 1.25rem;
   }
@@ -297,19 +290,19 @@
     <div class="transport-title">Getting Around</div>
     <div class="transport-row">
       <span>🛬</span>
-      <div><strong>Airport → Palazzo (Jun 2):</strong> Harry Reid T3 is ~10 min from the Strip. Rideshare from Level 1 arrivals ~$15–20. No US customs — pre-clearance done at YYZ T1.</div>
+      <div><strong>Airport → Palazzo (Jun 2):</strong> Harry Reid T3 is ~10 min from the Strip. Rideshare Level 1 arrivals ~$15–20. No US customs — pre-clearance done at YYZ T1.</div>
     </div>
     <div class="transport-row">
       <span>🚗</span>
-      <div><strong>Red Rock Canyon (Jun 4):</strong> Rent a car evening of Jun 3. Enterprise, Alamo, or book via Costco Travel. No timed entry needed Jun 1–Sept 30. Gas up in Las Vegas before leaving.</div>
+      <div><strong>Red Rock Canyon (Jun 4):</strong> Rent a car evening of Jun 3. Enterprise or Alamo on the Strip. No timed entry needed Jun 1–Sept 30. Gas up before leaving; stay in the AC car between viewpoints.</div>
     </div>
     <div class="transport-row">
       <span>🚕</span>
-      <div><strong>Strip transit:</strong> Lyft/Uber everywhere — Sphere ~8 min, Caesars ~6 min, Bellagio ~5 min. The Strip looks walkable on maps but June midday heat (100°F+) makes walking miserable. Rideshare freely.</div>
+      <div><strong>Strip transit:</strong> Lyft/Uber everywhere — Sphere ~8 min, Caesars ~6 min, Bellagio ~5 min, MGM Grand ~10 min, LINQ ~5 min. Strip blocks are massive in June heat — rideshare freely, no guilt.</div>
     </div>
     <div class="transport-row">
       <span>🛫</span>
-      <div><strong>Palazzo → Airport (Jun 7):</strong> 4 pm FHR checkout. Rideshare at 18:30. Terminal 3. Budget 90+ min for US pre-clearance before 23:25 departure.</div>
+      <div><strong>Palazzo → Airport (Jun 7):</strong> Guaranteed 4 pm checkout. Rideshare at 18:30. Terminal 3. Budget 90+ min for US pre-clearance before 23:25 departure.</div>
     </div>
   </div>
 </div>
@@ -336,7 +329,7 @@
           <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
             <div class="slot-title">AC1705 departs YYZ T1</div>
-            <div class="slot-desc">Business class, 03C (Mark) &amp; 03A (Harriet). ~5 hr flight with meal service. Recline and decompress.</div>
+            <div class="slot-desc">Business class, 03C (Mark) &amp; 03A (Harriet). ~5 hr flight, meal service. Recline, watch something, rest up.</div>
           </div>
         </div>
         <div class="slot">
@@ -344,7 +337,7 @@
           <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
             <div class="slot-title">Land LAS — Harry Reid T3</div>
-            <div class="slot-desc">No US customs — pre-clearance done at YYZ. Walk straight to rideshare Level 1. Lyft/Uber to Palazzo ~10 min, ~$15–20 USD.</div>
+            <div class="slot-desc">No US customs — pre-clearance done at YYZ. Walk straight to rideshare Level 1 outside arrivals. Palazzo ~10 min, ~$15–20.</div>
             <div class="slot-badges"><span class="badge badge-free">No customs on arrival</span></div>
           </div>
         </div>
@@ -353,7 +346,7 @@
           <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
             <div class="slot-title">Check in — The Palazzo</div>
-            <div class="slot-desc">Request room upgrade at front desk (FHR benefit). Ask for a high floor away from elevators. King suite with deep soaking tub — perfect for Harriet to unwind after flying. Use the tub tonight.</div>
+            <div class="slot-desc">Request room upgrade at front desk. Ask for a high floor away from elevators. King suite with deep soaking tub — use it tonight to decompress after flying.</div>
             <div class="slot-badges"><span class="badge badge-amex">✦ FHR: room upgrade</span></div>
           </div>
         </div>
@@ -362,7 +355,7 @@
           <div class="slot-line"><div class="slot-dot"></div></div>
           <div class="slot-content">
             <div class="slot-title">24-hr room service</div>
-            <div class="slot-desc">No need to go anywhere. Rest well — you have an early start on Day 3. Set a car rental pickup reminder and pack Day 3 supplies tonight.</div>
+            <div class="slot-desc">Late arrival — don't overthink it. Order whatever sounds good, run the bath, wind down. Tomorrow starts at 9:30am.</div>
             <div class="slot-badges"><span class="badge badge-preg">♡ Rest, hydrate, unwind</span></div>
           </div>
         </div>
@@ -370,13 +363,13 @@
     </div>
 
     <!-- DAY 2 -->
-    <div class="day theme-sphere">
+    <div class="day theme-explore">
       <div class="day-head">
         <div class="day-num-row">
           <div class="day-num">2</div>
           <div>
             <div class="day-date">Wednesday, June 3</div>
-            <div class="day-theme">Spa · Mott 32 · No Doubt at The Sphere</div>
+            <div class="day-theme">Conservatory · Fountains · High Roller · Mott 32 · Gondola</div>
           </div>
         </div>
       </div>
@@ -386,26 +379,52 @@
           <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
             <div class="slot-title">FHR Breakfast — charged to room</div>
-            <div class="slot-desc">Daily breakfast for two (min. $60 USD value). Must be charged to room to credit at checkout. Sleep in.</div>
+            <div class="slot-desc">Daily breakfast for two included (min. $60 USD value). Must be charged to room for credit at checkout. No rush — first full day.</div>
             <div class="slot-badges"><span class="badge badge-amex">✦ FHR: daily breakfast ×2</span></div>
           </div>
         </div>
         <div class="slot">
-          <div class="slot-time">11:00</div>
+          <div class="slot-time">09:30</div>
           <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Canyon Ranch Spa — prenatal massage</div>
-            <div class="slot-desc">World-class spa inside the Venetian. Book Harriet a prenatal massage before arrival — call 1-888-283-6423. Mark: lap pool, gym, or couples treatment. Avoid sauna and steam rooms during pregnancy — Canyon Ranch staff will guide you.</div>
-            <div class="slot-badges"><span class="badge badge-preg">♡ Prenatal massage available</span><span class="badge badge-book">⚑ Book before arrival</span></div>
+            <div class="slot-title">Bellagio Conservatory &amp; Botanical Garden</div>
+            <div class="slot-desc">Free, 5-min Lyft from Venetian. A 14,000 sq ft indoor floral installation that changes seasonally — stunning summer display. Access directly from Bellagio hotel lobby, no casino required. Quiet, beautiful, non-smoky. This is the kind of thing most Vegas visitors walk right past. Spend 30–45 min here.</div>
+            <div class="slot-badges"><span class="badge badge-free">Free · No casino needed</span><span class="badge badge-preg">♡ Calm, peaceful, indoors</span></div>
           </div>
         </div>
         <div class="slot">
-          <div class="slot-time">14:00</div>
+          <div class="slot-time">10:30</div>
           <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Palazzo pool — reserved daybed</div>
-            <div class="slot-desc">Call the hotel in advance to reserve a daybed or cabana. The Venetian/Palazzo pool complex is genuinely spectacular. Light poolside lunch. Rest before tonight.</div>
-            <div class="slot-badges"><span class="badge badge-tip">💡 Reserve daybed in advance</span></div>
+            <div class="slot-title">Forum Shops at Caesars — browse + Fall of Atlantis</div>
+            <div class="slot-desc">Walk directly from Bellagio into Caesars. Massive air-conditioned luxury mall built inside a replica Roman city — barrel-vaulted ceilings, talking statues, dramatic fountains. Free "Fall of Atlantis" animatronic show runs every hour starting at noon (12pm, 1pm, 2pm…). Silly and spectacular. Rest, sit, people-watch.</div>
+            <div class="slot-badges"><span class="badge badge-free">Free shows hourly from noon</span></div>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">12:30</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
+          <div class="slot-content">
+            <div class="slot-title">Lunch near Caesars/Bellagio area</div>
+            <div class="slot-desc">Lots of options within the hotels. Try Nobu at Caesars (cooked-friendly options, Harriet: skip raw fish), or grab something casual at the Bellagio food hall. Rest feet before the afternoon.</div>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">15:00</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
+          <div class="slot-content">
+            <div class="slot-title">Bellagio Fountains — first show of the day</div>
+            <div class="slot-desc">Weekday shows start at 3pm (runs every 30 min until 8pm, then every 15 min until midnight). 1,200 nozzles, 27 storeys high. Free from the sidewalk — the Bellagio bridge gives the best straight-on view. Stay for 2–3 shows; each song is different. Note: Saturday fountains start at NOON — catch that one too on Day 5.</div>
+            <div class="slot-badges"><span class="badge badge-free">Free · Every 30 min from 3pm weekdays</span></div>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">16:30</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
+          <div class="slot-content">
+            <div class="slot-title">High Roller Observation Wheel at LINQ</div>
+            <div class="slot-desc">World's tallest observation wheel (550 ft). 30-min full rotation in a fully enclosed, air-conditioned glass gondola. Board at 4:30pm so the rotation starts in golden-hour light and ends at dusk. Spectacular Strip views. Zero exertion, pregnancy-safe. LINQ is a 5-min Lyft or short walk from Bellagio.</div>
+            <div class="slot-badges"><span class="badge badge-preg">♡ Enclosed AC, zero exertion</span><span class="badge badge-free">30-min ride, stunning views</span></div>
           </div>
         </div>
         <div class="slot">
@@ -413,89 +432,122 @@
           <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
             <div class="slot-title">Dinner — Mott 32 (inside The Venetian)</div>
-            <div class="slot-desc">One of the world's most awarded Chinese restaurants — right in your hotel (Palazzo Casino Level 2). Take the tower elevator to avoid casino-floor smoke. Stunning dramatic interior. Must-order: 42-day dry-aged Peking duck (pre-order 24 hrs ahead when booking), Black Truffle XO Scallop dumplings, Iberico pork BBQ. All cooked — no raw items. Book via OpenTable; note pregnancy when reserving.</div>
-            <div class="slot-badges"><span class="badge badge-book">⚑ Book on OpenTable — pre-order duck</span><span class="badge badge-preg">♡ All cooked, no raw</span></div>
+            <div class="slot-desc">One of the world's most awarded Chinese restaurants — in your hotel (Palazzo Level 2). Take the tower elevator to skip casino smoke. Stunning dramatic interior. Order: 42-day dry-aged Peking duck (must request 24 hrs when booking), Black Truffle XO Scallop dumplings, Iberico pork BBQ. All cooked, no raw items. Book via OpenTable; mention pregnancy.</div>
+            <div class="slot-badges"><span class="badge badge-book">⚑ OpenTable — pre-order duck 24 hrs ahead</span><span class="badge badge-preg">♡ All cooked, no raw</span></div>
           </div>
         </div>
         <div class="slot">
           <div class="slot-time">20:15</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
+          <div class="slot-content">
+            <div class="slot-title">Venetian Indoor Grand Canal Gondola Ride</div>
+            <div class="slot-desc">Right in your hotel — indoor gondola through The Venetian's Grand Canal Shoppes. Air-conditioned, ~15 min, optional singing gondolier, genuinely romantic. The kind of thing most guests walk past on the way to the casino. ~$30/person. Ground floor of Grand Canal Shoppes. Perfect end to Day 2.</div>
+            <div class="slot-badges"><span class="badge badge-free">~$30/person · Indoor AC</span><span class="badge badge-preg">♡ Gentle, safe, romantic</span></div>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">21:15</div>
           <div class="slot-line"><div class="slot-dot"></div></div>
           <div class="slot-content">
-            <div class="slot-title">No Doubt at The Sphere — June 3 confirmed</div>
-            <div class="slot-desc">18,600-seat immersive venue wrapped in the world's largest LED screen (160,000 sq ft). 30th anniversary of Tragic Kingdom — Gwen Stefani's first extended Vegas run in 14 years. Seated throughout. If Harriet is sound-sensitive, venue sells hearing protection at the door. ~8 min Lyft from Venetian.</div>
-            <div class="slot-badges"><span class="badge badge-book">⚑ Book at thesphere.com — ASAP</span><span class="badge badge-tip">💡 Hearing protection at door if needed</span></div>
+            <div class="slot-title">Grand Canal Shoppes evening stroll</div>
+            <div class="slot-desc">Wander the illuminated canals, grab gelato or dessert, window shop. The Shoppes are beautiful at night with the painted sky ceiling. Back to room by 10:30pm.</div>
           </div>
         </div>
       </div>
     </div>
 
     <!-- DAY 3 -->
-    <div class="day theme-hike">
+    <div class="day theme-desert">
       <div class="day-head">
         <div class="day-num-row">
           <div class="day-num">3</div>
           <div>
             <div class="day-date">Thursday, June 4</div>
-            <div class="day-theme">Red Rock Canyon · Gondola · Ding Tai Fung</div>
+            <div class="day-theme">Red Rock Canyon · Mob Museum · Ding Tai Fung · Mat Franco</div>
           </div>
         </div>
       </div>
       <div class="day-body-inner">
         <div class="slot">
-          <div class="slot-time">06:00</div>
+          <div class="slot-time">09:00</div>
           <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Early departure — beat the heat</div>
-            <div class="slot-desc">June temperatures hit 100°F+ by 10am — this early window is non-negotiable. Pack water (2L each), sunscreen, hats, and snacks the night before. Collect rental car.</div>
-            <div class="slot-badges"><span class="badge badge-preg">♡ Beat the heat — early only</span><span class="badge badge-book">⚑ Reserve car in advance</span></div>
+            <div class="slot-title">Depart for Red Rock Canyon — rental car</div>
+            <div class="slot-desc">This is the one day with a slightly earlier start — June desert heat is serious. A 9am departure means arriving before 9:40am when temps are still manageable. Grab breakfast at the hotel first or bring snacks. Pack water (2L each) and sunscreen. Collect rental car from hotel self-park or nearby Enterprise.</div>
+            <div class="slot-badges"><span class="badge badge-preg">♡ Earlier today only — desert heat logic</span><span class="badge badge-book">⚑ Reserve car in advance</span></div>
           </div>
         </div>
         <div class="slot">
-          <div class="slot-time">07:15</div>
+          <div class="slot-time">09:35</div>
           <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
             <div class="slot-title">Red Rock Canyon — 13-mile Scenic Loop</div>
-            <div class="slot-desc">No timed entry reservation needed June 1–Sept 30. Pay $20/vehicle. Drive the one-way loop at your pace — pull off at Calico Hills overlook (most photogenic), Red Rock Wash, White Rock Springs. The experience is mostly from the car with short walks to paved viewpoints. Limit walking to under 20 min per stop before 9am. Stay in AC between stops. Stunning crimson sandstone formations — genuinely unlike anywhere on Earth.</div>
-            <div class="slot-badges"><span class="badge badge-free">No timed entry needed in June</span><span class="badge badge-preg">♡ Stay in AC, paved flat viewpoints only</span></div>
+            <div class="slot-desc">No timed entry reservation needed June 1–Sept 30. $20/vehicle at the booth. Drive the one-way loop at your own pace — mostly an air-conditioned car experience. Pull off at Calico Hills overlook (most photogenic, flat 3-min walk from the car to the viewpoint), Red Rock Wash, and White Rock Springs. The crimson sandstone formations are genuinely unlike anything you'll see elsewhere. Back in the car by 11:15am before heat intensifies.</div>
+            <div class="slot-badges"><span class="badge badge-free">No entry reservation in June</span><span class="badge badge-preg">♡ Stay in AC car, brief paved viewpoints only</span></div>
           </div>
         </div>
         <div class="slot">
-          <div class="slot-time">09:30</div>
+          <div class="slot-time">11:30</div>
           <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Return to hotel — rest</div>
-            <div class="slot-desc">~35 min drive back. Return car. Shower, nap, recover. The early start means you're back by 10:30 with a full day ahead.</div>
+            <div class="slot-title">Return to Strip — return car + lunch</div>
+            <div class="slot-desc">~35 min drive back. Return rental car. Grab a relaxed lunch at the hotel or nearby. Rest up — big afternoon ahead.</div>
           </div>
         </div>
         <div class="slot">
           <div class="slot-time">14:00</div>
           <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Venetian Indoor Grand Canal Gondola Ride</div>
-            <div class="slot-desc">Hidden gem most visitors skip — an indoor gondola through The Venetian's Grand Canal Shoppes. Quiet, air-conditioned, ~15 min. Optional singing gondolier. Genuinely romantic, zero motion concern, perfectly safe for pregnancy. ~$30/person. Book at the ground-floor gondola dock inside the Shoppes.</div>
-            <div class="slot-badges"><span class="badge badge-free">~$30/person, indoor AC</span><span class="badge badge-preg">♡ Gentle, romantic, safe</span></div>
+            <div class="slot-title">The Mob Museum — Downtown Las Vegas</div>
+            <div class="slot-desc">~15-min Lyft from the Strip. Housed in the actual 1933 federal courthouse where mob hearings shook the nation — this is the most underrated attraction in Las Vegas. Interactive exhibits on organized crime history, law enforcement, and Las Vegas's rise. Fascinating, fully air-conditioned, ~2 hrs. ~$35/person. Open until 9pm. The building alone is worth the trip. Most Strip tourists never make it downtown — this is the one reason to go.</div>
+            <div class="slot-badges"><span class="badge badge-free">~$35/person · Fully indoor AC</span><span class="badge badge-preg">♡ Fascinating, no exertion</span></div>
           </div>
         </div>
         <div class="slot">
-          <div class="slot-time">18:30</div>
+          <div class="slot-time">16:15</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
+          <div class="slot-content">
+            <div class="slot-title">Return to hotel — freshen up</div>
+            <div class="slot-desc">Back to Palazzo. Rest, shower, get ready for dinner and the show tonight.</div>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">17:15</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
+          <div class="slot-content">
+            <div class="slot-title">Early dinner — Ding Tai Fung (Grand Canal Shoppes)</div>
+            <div class="slot-desc">Inside your hotel — 5-min walk from the room. Early dinner keeps the night flexible for the show. Famous XLB soup dumplings, shrimp fried rice, garlic green beans, wonton soup. All cooked — pregnancy-safe. Confirm MSG preference with server. Done by 6:30pm.</div>
+            <div class="slot-badges"><span class="badge badge-preg">♡ All cooked — confirm MSG with server</span><span class="badge badge-free">5-min walk from room</span></div>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">19:00</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
+          <div class="slot-content">
+            <div class="slot-title">Mat Franco — Magic Reinvented Nightly (The LINQ)</div>
+            <div class="slot-desc">America's Got Talent winner and resident Las Vegas magician. The LINQ Hotel is a 5-min Lyft or short walk north of the Venetian on the Strip. Thursday Jun 4 at 7pm is a confirmed show night (Mat Franco performs Tue–Sun, no Wednesdays). ~90-min show of world-class close-up and stage magic with genuine wit. Seats are comfortable, fully seated throughout. Book at vegasshowsguide.com or the LINQ box office.</div>
+            <div class="slot-badges"><span class="badge badge-book">⚑ Book in advance — Thu Jun 4, 7pm</span><span class="badge badge-preg">♡ Fully seated, 90 min, no strobe</span></div>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">20:45</div>
           <div class="slot-line"><div class="slot-dot"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Dinner — Ding Tai Fung (Grand Canal Shoppes)</div>
-            <div class="slot-desc">You're literally staying upstairs. Famous XLB soup dumplings, shrimp fried rice, garlic green beans, wonton soup. All cooked — pregnancy-safe. Confirm MSG preference with server. No reservation usually needed at 18:30 on a Thursday.</div>
-            <div class="slot-badges"><span class="badge badge-preg">♡ All cooked — confirm MSG with server</span><span class="badge badge-free">5-min walk from room</span></div>
+            <div class="slot-title">LINQ Promenade + dessert</div>
+            <div class="slot-desc">After the show, the LINQ Promenade is a lively outdoor corridor (bearably cool at night) with shops, dessert spots, and the lit-up High Roller. Grab something sweet, stroll back toward the Strip, Lyft home. In bed by 10:30pm.</div>
           </div>
         </div>
       </div>
     </div>
 
     <!-- DAY 4 -->
-    <div class="day theme-cirque">
+    <div class="day theme-magic">
       <div class="day-head">
         <div class="day-num-row">
           <div class="day-num">4</div>
           <div>
             <div class="day-date">Friday, June 5</div>
-            <div class="day-theme">Bellagio · Fine Dining · "O" Cirque du Soleil</div>
+            <div class="day-theme">Shark Reef · Fine Dining · David Copperfield</div>
           </div>
         </div>
       </div>
@@ -504,44 +556,60 @@
           <div class="slot-time">AM</div>
           <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">FHR Breakfast + leisurely morning</div>
-            <div class="slot-desc">Your most relaxed full day. Charge breakfast to room. No agenda until noon — pool, Shoppes, or sleep in.</div>
+            <div class="slot-title">FHR Breakfast + relaxed morning</div>
+            <div class="slot-desc">Sleep in fully — no pressure. Charge breakfast to room. Today has a late afternoon dinner and a late show, so the morning is genuinely free.</div>
             <div class="slot-badges"><span class="badge badge-amex">✦ FHR: daily breakfast ×2</span></div>
           </div>
         </div>
         <div class="slot">
-          <div class="slot-time">11:30</div>
+          <div class="slot-time">10:30</div>
           <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Bellagio Conservatory &amp; Botanical Garden</div>
-            <div class="slot-desc">Free, open to the public — 5-min Lyft. Bellagio's stunning seasonal floral installation. Summer display is spectacular. Access directly from hotel lobby, no casino floor required. Quiet, non-smoky, genuinely beautiful — 20–30 min well spent. The kind of thing most Vegas visitors walk right past.</div>
-            <div class="slot-badges"><span class="badge badge-free">Free · No casino floor needed</span><span class="badge badge-preg">♡ Calm, peaceful, beautiful</span></div>
+            <div class="slot-title">Shark Reef Aquarium — Mandalay Bay</div>
+            <div class="slot-desc">~20-min Lyft to the south end of the Strip. Over 2,000 animals — sharks, rays, sea turtles, jellyfish — in a stunning, fully indoor aquarium. Highlight: the underwater tunnel walk with sharks swimming overhead. Touch-pool section. Peaceful, dim, air-conditioned, ~1.5 hrs. ~$30/person. One of the most genuinely calming things you can do in Las Vegas — an antidote to the casino energy. Pregnancy-safe in every way.</div>
+            <div class="slot-badges"><span class="badge badge-free">~$30/person · Fully indoor AC</span><span class="badge badge-preg">♡ Calm, beautiful, zero exertion</span></div>
           </div>
         </div>
         <div class="slot">
-          <div class="slot-time">13:00</div>
+          <div class="slot-time">12:30</div>
           <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Forum Shops at Caesars — rest &amp; browse</div>
-            <div class="slot-desc">Attached to Caesars next door to Bellagio. Enormous air-conditioned luxury mall with a Roman fountain centrepiece. Browse, sit, people-watch. Good rest spot mid-day before dinner.</div>
+            <div class="slot-title">Lunch + head back toward mid-Strip</div>
+            <div class="slot-desc">There are great lunch spots at Mandalay Bay, or Lyft back up toward the Cosmopolitan/Bellagio area and eat there. No rush — you have a few hours before dinner.</div>
           </div>
         </div>
         <div class="slot">
-          <div class="slot-time">17:00</div>
+          <div class="slot-time">14:00</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
+          <div class="slot-content">
+            <div class="slot-title">Afternoon rest at hotel</div>
+            <div class="slot-desc">Come back, nap, get ready. Late dinner and a late show tonight — conserve energy now.</div>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">17:30</div>
           <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
             <div class="slot-title">Dinner — é by José Andrés (The Cosmopolitan)</div>
-            <div class="slot-desc">Only 8 seats per seating — the most intimate dining experience in Vegas. Chef's counter tasting menu inside Jaleo. Book immediately via OpenTable or call The Cosmopolitan. Inform them of the pregnancy — they will customize every course, eliminate raw items, and make it a genuinely special babymoon experience. Alternate if unavailable: Zuma at The Cosmopolitan (contemporary Japanese, same building, excellent).</div>
-            <div class="slot-badges"><span class="badge badge-book">⚑ Book NOW — weeks in advance</span><span class="badge badge-preg">♡ Inform of pregnancy — they'll customize</span></div>
+            <div class="slot-desc">8 seats per seating — the most intimate dining experience in Vegas. Chef's counter tasting menu inside Jaleo. Book immediately via OpenTable or call The Cosmopolitan directly. Mention the pregnancy when booking — they will eliminate raw items, customize courses, and make it a genuinely special babymoon dinner. If not available: Zuma at The Cosmopolitan is an excellent alternative (contemporary Japanese, same building, excellent cooked menu).</div>
+            <div class="slot-badges"><span class="badge badge-book">⚑ Book NOW — weeks out, 8 seats only</span><span class="badge badge-preg">♡ Mention pregnancy — they'll customize beautifully</span></div>
           </div>
         </div>
         <div class="slot">
-          <div class="slot-time">21:00</div>
+          <div class="slot-time">20:00</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
+          <div class="slot-content">
+            <div class="slot-title">Walk/Lyft to MGM Grand area — pre-show stroll</div>
+            <div class="slot-desc">The Cosmopolitan and MGM Grand are adjacent hotels on the south-central Strip. 5-min walk. Grab a decaf or dessert at one of the hotel cafes before the show.</div>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">21:30</div>
           <div class="slot-line"><div class="slot-dot"></div></div>
           <div class="slot-content">
-            <div class="slot-title">"O" by Cirque du Soleil — Bellagio</div>
-            <div class="slot-desc">One of the greatest theatrical shows on Earth. A 1.5-million-gallon pool appears and disappears mid-show, with aerial acrobats, synchronized swimmers, and live theatre combined. Fully seated throughout, no strobe lights, no sudden loud effects. June 5 (Fri) 9pm confirmed. Book at cirquedusoleil.com. Bellagio is 5-min Lyft from Venetian.</div>
-            <div class="slot-badges"><span class="badge badge-book">⚑ Book at cirquedusoleil.com</span><span class="badge badge-preg">♡ Fully seated, no strobes</span></div>
+            <div class="slot-title">David Copperfield — MGM Grand (9:30pm show)</div>
+            <div class="slot-desc">The greatest living magician — holder of 11 Guinness World Records. Performs regularly at his own theater inside MGM Grand. Intimate venue. The 9:30pm Friday show is a regular slot; confirm current schedule at davidcopperfield.com when booking. Approximately 90-min show. Walking distance from Cosmopolitan (where you had dinner). Home by 11:15pm.</div>
+            <div class="slot-badges"><span class="badge badge-book">⚑ davidcopperfield.com — confirm Fri Jun 5</span><span class="badge badge-preg">♡ Seated throughout, 90 min</span></div>
           </div>
         </div>
       </div>
@@ -554,7 +622,7 @@
           <div class="day-num">5</div>
           <div>
             <div class="day-date">Saturday, June 6</div>
-            <div class="day-theme">High Roller · Peter Luger · Helicopter Night Flight</div>
+            <div class="day-theme">Fountains at Noon · Peter Luger · Strip Evening</div>
           </div>
         </div>
       </div>
@@ -563,18 +631,35 @@
           <div class="slot-time">AM</div>
           <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">FHR Breakfast — use $100 F&amp;B credit</div>
-            <div class="slot-desc">If the F&B credit hasn't been used yet, apply it today. Must be charged to room. Morning: pool or final Canyon Ranch treatment.</div>
+            <div class="slot-title">FHR Breakfast + use $100 F&amp;B credit</div>
+            <div class="slot-desc">If you haven't used the F&amp;B credit yet, apply it now — must be charged to room. Sleep in. Late-start day.</div>
             <div class="slot-badges"><span class="badge badge-amex">✦ FHR: breakfast + $100 F&amp;B credit</span></div>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">12:00</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
+          <div class="slot-content">
+            <div class="slot-title">Bellagio Fountains — noon show (Saturday only)</div>
+            <div class="slot-desc">Saturday is the only day the fountains start at noon — this is your "earlier in the day" show. 5-min Lyft from Venetian. Catch the 12pm and 12:30pm shows back to back. The daytime show with the fountain jets against the blue sky is a completely different experience from the evening show. Both are worth seeing.</div>
+            <div class="slot-badges"><span class="badge badge-free">Free · Sat/Sun start at noon</span></div>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">13:00</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
+          <div class="slot-content">
+            <div class="slot-title">Forum Shops at Caesars — browse + Atlantis show</div>
+            <div class="slot-desc">Walk directly from Bellagio to Caesars (connected via covered walkway). Iconic Roman-themed mall — fully AC. Fall of Atlantis show runs hourly from noon. Grab lunch here if you haven't eaten.</div>
+            <div class="slot-badges"><span class="badge badge-free">Free shows hourly from noon</span></div>
           </div>
         </div>
         <div class="slot">
           <div class="slot-time">15:30</div>
           <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">High Roller Observation Wheel — twilight boarding</div>
-            <div class="slot-desc">World's tallest observation wheel (550 ft / 168m) at the LINQ Promenade. 30-min full rotation in a fully enclosed, air-conditioned glass gondola. Board at 15:30 so you start in daylight and end in the golden hour. Zero physical exertion, pregnancy-safe, spectacular panoramic Strip views. Buy at the wheel or in advance at caesars.com. ~15-min Lyft from Venetian.</div>
-            <div class="slot-badges"><span class="badge badge-preg">♡ Enclosed AC, zero exertion</span><span class="badge badge-free">30-min ride, stunning views</span></div>
+            <div class="slot-title">Return to hotel — rest before dinner</div>
+            <div class="slot-desc">Head back to Palazzo. Rest, get dressed up — tonight is the big splurge dinner. Peter Luger calls for a proper outfit.</div>
           </div>
         </div>
         <div class="slot">
@@ -582,17 +667,25 @@
           <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
             <div class="slot-title">Dinner — Peter Luger at Caesars Palace</div>
-            <div class="slot-desc">Brooklyn's legendary dry-aged steakhouse — now at Caesars (3570 Las Vegas Blvd S, ~6-min Lyft). USDA Prime porterhouse served sizzling tableside. Order: Porterhouse for Two, thick-cut bacon starter, creamed spinach, German fried potatoes. Pregnancy note: request medium-well or well-done — they'll do it without complaint. Reserve via OpenTable or call (702) 731-7267. Saturday dinner books fast.</div>
-            <div class="slot-badges"><span class="badge badge-book">⚑ Book via OpenTable or (702) 731-7267</span><span class="badge badge-preg">♡ Request medium-well or well-done</span></div>
+            <div class="slot-desc">Brooklyn's legendary dry-aged steakhouse — now at Caesars (3570 Las Vegas Blvd S, ~6-min Lyft). USDA Prime porterhouse sizzling tableside. Order: Porterhouse for Two, thick-cut bacon starter, creamed spinach, German fried potatoes. Pregnancy note: request medium-well or well-done for Harriet — they'll do it without issue. Reserve via OpenTable or call (702) 731-7267. Saturday dinner books fast — do this now.</div>
+            <div class="slot-badges"><span class="badge badge-book">⚑ OpenTable or (702) 731-7267 — book ahead</span><span class="badge badge-preg">♡ Request medium-well or well-done</span></div>
           </div>
         </div>
         <div class="slot">
-          <div class="slot-time">21:00</div>
+          <div class="slot-time">20:30</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
+          <div class="slot-content">
+            <div class="slot-title">Bellagio Fountains — evening show</div>
+            <div class="slot-desc">Caesars Palace and Bellagio are adjacent — walk over (5 min) or short Lyft. After 8pm on Saturdays, the fountains run every 15 minutes. The night show with neon reflections on the water is spectacular — a completely different feel from the noon show. Catch 2–3 shows.</div>
+            <div class="slot-badges"><span class="badge badge-free">Free · Every 15 min after 8pm</span></div>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">21:30</div>
           <div class="slot-line"><div class="slot-dot"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Maverick Helicopters — Strip Night Flight</div>
-            <div class="slot-desc">~12-min flight over the neon Strip in a luxury Airbus helicopter with wrap-around glass. Seeing Las Vegas from the air at night is genuinely surreal — the lights, the scale. Hotel pickup from Palazzo available — request at booking. Arrive 30 min early for weigh-in (done professionally and privately). Maverick has flown thousands of pregnant passengers safely; consult your OB before booking. Book at maverickhelicopter.com — 2+ weeks ahead.</div>
-            <div class="slot-badges"><span class="badge badge-book">⚑ maverickhelicopter.com — book 2 wks out</span><span class="badge badge-preg">♡ Consult OB first — generally safe</span></div>
+            <div class="slot-title">Evening Strip walk northbound</div>
+            <div class="slot-desc">At night in June, the Strip becomes genuinely beautiful — neon, crowds, energy. Walk or Lyft back north toward the Venetian. Stop at Paris Hotel for the Eiffel Tower lit up, peek at the Wynn's lobby, or just take it all in. Last full night — enjoy the vibe. Back by 11pm.</div>
           </div>
         </div>
       </div>
@@ -605,7 +698,7 @@
           <div class="day-num">6</div>
           <div>
             <div class="day-date">Sunday, June 7</div>
-            <div class="day-theme">Late checkout · Bellagio Fountains · Fly home</div>
+            <div class="day-theme">Late checkout · Shoppes · Fly home</div>
           </div>
         </div>
       </div>
@@ -615,7 +708,7 @@
           <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
             <div class="slot-title">Final FHR Breakfast — no alarm</div>
-            <div class="slot-desc">4 pm guaranteed checkout. Absolutely no rush. Last morning — sleep in, long breakfast, full enjoyment.</div>
+            <div class="slot-desc">Guaranteed 4pm checkout means a full morning. Sleep in completely. Last leisurely breakfast — no agenda until you feel like moving.</div>
             <div class="slot-badges"><span class="badge badge-amex">✦ FHR: daily breakfast ×2</span></div>
           </div>
         </div>
@@ -623,25 +716,33 @@
           <div class="slot-time">11:00</div>
           <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Pool, Shoppes, or final spa visit</div>
-            <div class="slot-desc">Full half-day to use. Palazzo pool, last Grand Canal Shoppes browse, or a final Canyon Ranch treatment. Apply any remaining F&amp;B credit to room charges.</div>
+            <div class="slot-title">Grand Canal Shoppes — last stroll</div>
+            <div class="slot-desc">Wander the Shoppes, pick up any last souvenirs, grab a coffee. If you haven't done the indoor gondola yet, today is your last chance (~$30/person). Sunday means a slightly quieter Shoppes than the weekend peak.</div>
           </div>
         </div>
         <div class="slot">
-          <div class="slot-time">15:00</div>
+          <div class="slot-time">13:00</div>
           <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Bellagio Fountains — last Vegas moment</div>
-            <div class="slot-desc">5-min Lyft. Free show runs every 15–30 min from the sidewalk. Tip: time it for "Time to Say Goodbye" (Andrea Bocelli) — the most moving pairing in the show rotation. The late-afternoon sun on the water is spectacular.</div>
-            <div class="slot-badges"><span class="badge badge-free">Free · Every 15–30 min</span></div>
+            <div class="slot-title">Bellagio Fountains — noon show (Sunday)</div>
+            <div class="slot-desc">Sunday fountains also start at noon. Quick 5-min Lyft. Catch one more show before heading back to pack — a lovely final Vegas memory. If you'd rather stay in the hotel, this is totally optional.</div>
+            <div class="slot-badges"><span class="badge badge-free">Free · Sun noon show</span></div>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="slot-time">14:30</div>
+          <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
+          <div class="slot-content">
+            <div class="slot-title">Pack + hotel lobby lounge</div>
+            <div class="slot-desc">Get bags packed before checkout. Drop them with the bell desk at 4pm and relax in the lobby or have a last drink/snack in the hotel.</div>
           </div>
         </div>
         <div class="slot">
           <div class="slot-time">16:00</div>
           <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Checkout — guaranteed 4 pm</div>
-            <div class="slot-desc">Drop bags with bell desk. Resort fee + taxes (~$424 CAD) billed now. Use hotel lobby lounge until departure time.</div>
+            <div class="slot-title">Checkout — guaranteed 4 pm (Amex FHR)</div>
+            <div class="slot-desc">Resort fee + taxes (~$424 CAD) billed now. Bags with bell desk. Lobby lounge until you're ready to leave. You have a long wait before the flight — no rush.</div>
             <div class="slot-badges"><span class="badge badge-amex">✦ FHR: guaranteed 4 pm checkout</span></div>
           </div>
         </div>
@@ -649,8 +750,8 @@
           <div class="slot-time">18:30</div>
           <div class="slot-line"><div class="slot-dot"></div><div class="slot-vline"></div></div>
           <div class="slot-content">
-            <div class="slot-title">Rideshare → Harry Reid T3</div>
-            <div class="slot-desc">~10 min. Budget 90+ min for US pre-clearance at check-in before 23:25 departure. AC1708 seats: 03D (Mark), 03F (Harriet).</div>
+            <div class="slot-title">Rideshare → Harry Reid Airport T3</div>
+            <div class="slot-desc">~10 min. Budget 90+ min for US pre-clearance at check-in. Grab dinner at the airport (T3 has solid options) — flight isn't until 23:25.</div>
           </div>
         </div>
         <div class="slot">
@@ -658,7 +759,7 @@
           <div class="slot-line"><div class="slot-dot"></div></div>
           <div class="slot-content">
             <div class="slot-title">AC1708 LAS → YUL → YYZ</div>
-            <div class="slot-desc">Business class, breakfast service. Connects YUL: AC405 09:10 → YYZ 10:38. Seats YUL→YYZ: 03A (Mark), 03C (Harriet). Home Mon Jun 8.</div>
+            <div class="slot-desc">Business class, breakfast service. Connects YUL: AC405 09:10 → YYZ 10:38. Seats YUL→YYZ: 03A (Mark), 03C (Harriet). Home Mon Jun 8 by 11am.</div>
           </div>
         </div>
       </div>
@@ -670,47 +771,43 @@
   <div class="bottom-grid">
 
     <div class="info-card">
-      <div class="info-title gold">⚑ Booking Checklist — Action Required</div>
-      <div class="note-row"><div class="note-icon">⚑</div><div><strong>No Doubt at The Sphere (Jun 3)</strong> — thesphere.com or Ticketmaster. Wed Jun 3 is a confirmed show date. Book immediately — final six shows of the residency.</div></div>
-      <div class="note-row"><div class="note-icon">⚑</div><div><strong>é by José Andrés (Jun 5)</strong> — OpenTable or call The Cosmopolitan. Only 8 seats per seating. Book weeks in advance. Mention pregnancy for menu customization.</div></div>
-      <div class="note-row"><div class="note-icon">⚑</div><div><strong>"O" Cirque du Soleil (Jun 5)</strong> — cirquedusoleil.com. Fri Jun 5, 9pm show confirmed. Book now.</div></div>
+      <div class="info-title gold">⚑ Booking Checklist</div>
+      <div class="note-row"><div class="note-icon">⚑</div><div><strong>é by José Andrés (Jun 5)</strong> — OpenTable or call The Cosmopolitan. Only 8 seats. Book weeks in advance. Mention pregnancy for menu customization. Alternate: Zuma, same building.</div></div>
       <div class="note-row"><div class="note-icon">⚑</div><div><strong>Mott 32 (Jun 3)</strong> — OpenTable. When booking, request the 42-day Peking duck — must be ordered 24 hrs in advance. Note pregnancy.</div></div>
-      <div class="note-row"><div class="note-icon">⚑</div><div><strong>Peter Luger (Jun 6)</strong> — OpenTable or call (702) 731-7267. Saturday dinner fills fast.</div></div>
-      <div class="note-row"><div class="note-icon">⚑</div><div><strong>Canyon Ranch Spa (Jun 3)</strong> — Prenatal massage for Harriet. Call 1-888-283-6423 before arrival.</div></div>
-      <div class="note-row"><div class="note-icon">⚑</div><div><strong>Maverick Helicopter (Jun 6)</strong> — maverickhelicopter.com. Book 2+ weeks ahead. Request Palazzo hotel pickup.</div></div>
-      <div class="note-row"><div class="note-icon">⚑</div><div><strong>Rental Car (Jun 4)</strong> — Reserve via Enterprise, Alamo, or Costco Travel. Pick up evening of Jun 3, return morning of Jun 4.</div></div>
-      <div class="note-row"><div class="note-icon">⚑</div><div><strong>Palazzo Pool Daybed (Jun 3)</strong> — Call hotel to reserve a daybed/cabana in advance for the afternoon.</div></div>
+      <div class="note-row"><div class="note-icon">⚑</div><div><strong>Peter Luger (Jun 6)</strong> — OpenTable or call (702) 731-7267. Saturday dinner fills fast — book immediately.</div></div>
+      <div class="note-row"><div class="note-icon">⚑</div><div><strong>Mat Franco (Jun 4)</strong> — Book at vegasshowsguide.com or LINQ box office. Thursday Jun 4, 7pm. Performs Tue–Sun, not Wednesdays.</div></div>
+      <div class="note-row"><div class="note-icon">⚑</div><div><strong>David Copperfield (Jun 5)</strong> — davidcopperfield.com. Confirm Fri Jun 5 at 9:30pm on the current schedule when booking.</div></div>
+      <div class="note-row"><div class="note-icon">⚑</div><div><strong>Rental Car (Jun 4)</strong> — Reserve via Enterprise, Alamo, or Costco Travel. Pick up evening of Jun 3, return morning of Jun 4 by noon.</div></div>
     </div>
 
     <div class="info-card">
       <div class="info-title pink">♡ Babymoon Essentials</div>
-      <div class="note-row"><div class="note-icon">♡</div><div><strong>Avoid casino smoke:</strong> Route through hotel towers and shopping arcades, not the casino floor. The Venetian/Palazzo has clear tower routes — ask hotel staff for the smoke-free path from your room to the Strip.</div></div>
-      <div class="note-row"><div class="note-icon">♡</div><div><strong>Hydration is critical:</strong> Vegas air is ~5% humidity — drier than any Canadian city. Pregnancy increases fluid needs. Keep a large water bottle with you everywhere, especially in the car at Red Rock.</div></div>
-      <div class="note-row"><div class="note-icon">♡</div><div><strong>June heat:</strong> Do all outdoor activity before 10am or after 6pm. Midday heat hits 105°F+ with brutal UV. Rideshare freely — no pride about walking the Strip in that heat, especially while pregnant.</div></div>
-      <div class="note-row"><div class="note-icon">♡</div><div><strong>Prenatal pillow:</strong> Pack a small pregnancy wedge pillow for 5 nights of hotel sleep. The Palazzo soaking tub is excellent for leg and back relief — use it every evening.</div></div>
-      <div class="note-row"><div class="note-icon">♡</div><div><strong>Sauna + steam rooms:</strong> Off-limits during pregnancy. Canyon Ranch staff are experienced — mention the pregnancy and they will guide you to appropriate treatments without any awkwardness.</div></div>
-      <div class="note-row"><div class="note-icon">♡</div><div><strong>Flying note:</strong> Pressurized cabin is fine for pregnancy. The late return flight (23:25) is long — business class flat-bed makes it manageable. Hydrate extra on both flights.</div></div>
-      <div class="note-row"><div class="note-icon">♡</div><div><strong>Nearest hospital:</strong> Sunrise Hospital &amp; Medical Center, 3186 S Maryland Pkwy — ~10 min from the Strip. Store the address before you go. Not something you'll need, but smart to have.</div></div>
+      <div class="note-row"><div class="note-icon">♡</div><div><strong>Avoid casino smoke:</strong> Route through the Palazzo tower and Grand Canal Shoppes rather than the casino floor. Ask hotel staff for the tower elevator path — it bypasses the casino entirely.</div></div>
+      <div class="note-row"><div class="note-icon">♡</div><div><strong>Hydration:</strong> Vegas air is ~5% humidity — far drier than Toronto. Pregnancy increases fluid needs. Keep a large water bottle everywhere, especially in the rental car at Red Rock.</div></div>
+      <div class="note-row"><div class="note-icon">♡</div><div><strong>June heat:</strong> Outdoor time only before 10am or after 6pm. Even a 5-min Strip walk at noon in June can be 105°F with brutal UV. Rideshare freely — this is the right call, not a compromise.</div></div>
+      <div class="note-row"><div class="note-icon">♡</div><div><strong>Soaking tub:</strong> The Palazzo suite has a deep soaking tub. Use it every evening — excellent for leg and back relief over 5 nights. Pack bath salts if you like them.</div></div>
+      <div class="note-row"><div class="note-icon">♡</div><div><strong>Flying note:</strong> Pressurized cabin is fine. The return (23:25) is a very late departure — business class flat-bed is the saving grace here. Hydrate extra on both flights.</div></div>
+      <div class="note-row"><div class="note-icon">♡</div><div><strong>Nearest hospital:</strong> Sunrise Hospital &amp; Medical Center, 3186 S Maryland Pkwy — ~10 min from the Strip. Store the address. Not something you'll need, just smart to have.</div></div>
     </div>
 
     <div class="info-card">
-      <div class="info-title teal">💡 What Most People Miss</div>
-      <div class="note-row"><div class="note-icon">💡</div><div><strong>Mott 32 Peking duck:</strong> Must be ordered 24 hours ahead when making your reservation. This is the best Peking duck in Las Vegas — carved tableside. Don't miss it; mention it when you call to book.</div></div>
-      <div class="note-row"><div class="note-icon">💡</div><div><strong>Bellagio fountain timing:</strong> "Time to Say Goodbye" (Andrea Bocelli, ~8pm) is the most emotional and visually spectacular pairing. The daytime shows are beautiful, but the lit-up night version is in a different league entirely.</div></div>
-      <div class="note-row"><div class="note-icon">💡</div><div><strong>Venetian gondola — go Thursday:</strong> The indoor Grand Canal gondola gets crowded on weekends. Going Jun 4 (Thursday) mid-afternoon means minimal wait and a quieter, more intimate experience.</div></div>
-      <div class="note-row"><div class="note-icon">💡</div><div><strong>Red Rock Canyon best stop:</strong> The Calico Hills pull-off is the most photogenic by a significant margin. A flat 5-min walk from the parking area reaches the first overlook — worth it before 8am when it's cool and quiet.</div></div>
-      <div class="note-row"><div class="note-icon">💡</div><div><strong>Peter Luger — Vegas accepts cards:</strong> The legendary Brooklyn original is cash-only, but the Caesars Palace Vegas location accepts all major credit cards. No ATM scramble needed.</div></div>
-      <div class="note-row"><div class="note-icon">💡</div><div><strong>High Roller board at 15:30:</strong> Starting in daylight and ending in the golden/neon hour gives you both views in one 30-min ride. Far better than boarding fully after dark.</div></div>
-      <div class="note-row"><div class="note-icon">💡</div><div><strong>Palazzo tower path:</strong> Your hotel room is in the Palazzo tower. You can reach Mott 32, DTF, the Grand Canal Shoppes, and the casino exits entirely via tower corridors and shopping levels — no casino floor required, minimal smoke exposure.</div></div>
+      <div class="info-title teal">💡 Things Most People Miss</div>
+      <div class="note-row"><div class="note-icon">💡</div><div><strong>Mott 32 Peking duck:</strong> Pre-order it when you book (24 hrs in advance required). It's carved tableside and is the standout dish. Don't show up hoping to order it without the heads-up.</div></div>
+      <div class="note-row"><div class="note-icon">💡</div><div><strong>Bellagio Conservatory timing:</strong> The morning (9–10am) is the quietest time — fewer people, better photos, more peaceful. Going on Day 2 at 9:30am is ideal.</div></div>
+      <div class="note-row"><div class="note-icon">💡</div><div><strong>Forum Shops Fall of Atlantis:</strong> Free, hourly from noon. The animatronics are campy and spectacular. The 12pm or 1pm show has the lightest crowd.</div></div>
+      <div class="note-row"><div class="note-icon">💡</div><div><strong>Venetian gondola — Thursday timing:</strong> Goes mid-afternoon on Day 3 (Thu). Weekday afternoons have the shortest wait. Weekend evenings have lineups. The indoor canal ride is genuinely romantic — most guests walk past it.</div></div>
+      <div class="note-row"><div class="note-icon">💡</div><div><strong>Peter Luger — Vegas accepts cards:</strong> The Brooklyn original is cash-only. The Caesars Palace Vegas location takes all major credit cards. No ATM scramble needed.</div></div>
+      <div class="note-row"><div class="note-icon">💡</div><div><strong>Mob Museum speakeasy:</strong> The Underground Speakeasy &amp; Distillery is in the Mob Museum basement — a Prohibition-era speakeasy with craft cocktails and mocktails. Worth stopping in for a mocktail for Harriet after the exhibits.</div></div>
+      <div class="note-row"><div class="note-icon">💡</div><div><strong>Bellagio Fountains best pairing:</strong> "Time to Say Goodbye" (Andrea Bocelli) at the 8pm Saturday show is considered the most moving. The Saturday noon show is a completely different, sunlit experience — catching both on Day 5 is the move.</div></div>
     </div>
 
     <div class="info-card">
-      <div class="info-title purple">🚁 Helicopter — What to Know</div>
-      <div class="note-row"><div class="note-icon">🚁</div><div><strong>Strip Night Flight vs Grand Canyon:</strong> For a babymoon, the Strip Night Flight (~12 min, ~$100/person) is the right choice. Grand Canyon West Rim tours (~4 hrs) are spectacular but exhausting, involve landing in 105°F desert heat, and are too demanding for this trip. Save the canyon for a future visit.</div></div>
-      <div class="note-row"><div class="note-icon">🚁</div><div><strong>Maverick vs Papillon:</strong> Maverick Helicopters (maverickhelicopter.com) is preferred for Strip flights — newer Airbus fleet, larger wrap-around windows, smoother boarding process. Both are licensed and reputable.</div></div>
-      <div class="note-row"><div class="note-icon">🚁</div><div><strong>Weigh-in:</strong> All passengers are weighed for seating configuration (weight &amp; balance). This is standard aviation procedure, handled professionally and privately. Arrive 30 min early as instructed.</div></div>
-      <div class="note-row"><div class="note-icon">🚁</div><div><strong>OB clearance:</strong> At low-level Strip altitude, cabin pressure is not a concern. Maverick has safely flown thousands of pregnant passengers. Still, get verbal OB sign-off before booking — keep it in writing if your doctor has any concerns about the trimester.</div></div>
-      <div class="note-row"><div class="note-icon">🚁</div><div><strong>Hotel pickup:</strong> Request Palazzo pickup when booking. No rideshare needed that night — they come to you. Confirm pickup time and meeting point when they confirm your reservation.</div></div>
+      <div class="info-title purple">🍽 Dinner at a Glance</div>
+      <div class="note-row"><div class="note-icon">🍜</div><div><strong>Jun 3 (Wed) — Mott 32</strong> · Inside The Venetian · Cantonese/dim sum · World-class, all cooked · Book on OpenTable · Pre-order Peking duck 24 hrs ahead.</div></div>
+      <div class="note-row"><div class="note-icon">🥟</div><div><strong>Jun 4 (Thu) — Ding Tai Fung</strong> · Inside The Venetian Grand Canal Shoppes · Famous XLB soup dumplings · No reservation needed at 5:15pm · Confirm MSG preference.</div></div>
+      <div class="note-row"><div class="note-icon">🍽</div><div><strong>Jun 5 (Fri) — é by José Andrés</strong> · The Cosmopolitan · Chef's counter, 8 seats · Tasting menu · Book weeks ahead · Mention pregnancy for menu customization. Alt: Zuma (same building).</div></div>
+      <div class="note-row"><div class="note-icon">🥩</div><div><strong>Jun 6 (Sat) — Peter Luger</strong> · Caesars Palace · Brooklyn's legendary steakhouse · USDA Prime dry-aged porterhouse · Request medium-well for Harriet · Reserve now: (702) 731-7267.</div></div>
+      <div class="note-row"><div class="note-icon">💡</div><div><strong>F&amp;B credit note:</strong> The Amex FHR $100 credit must be charged to your room at The Palazzo to count at checkout — it does not apply at The Venetian restaurants. Confirm with front desk at check-in which outlets qualify.</div></div>
     </div>
 
   </div>
